@@ -13,10 +13,11 @@ public class GameController : SingletonBehaviour<GameController>
     
     private float currentTimeSecond = 0f;
 
-    void Start()
+    async void Start()
     {
         this.Score = 0;
         this.SetupPlayers();
+        WebsocketManager.Instance.Connect();
     }
 
     void Update()
