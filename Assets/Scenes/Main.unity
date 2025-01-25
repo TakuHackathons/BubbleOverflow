@@ -662,10 +662,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6563104208036029406, guid: e38a2afb433466f4098eae4309b47252, type: 3}
-      propertyPath: m_text
-      value: 10 seconds
-      objectReference: {fileID: 0}
     - target: {fileID: 7013173783206175354, guid: e38a2afb433466f4098eae4309b47252, type: 3}
       propertyPath: m_Name
       value: TimeCounterText
