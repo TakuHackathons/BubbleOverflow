@@ -562,6 +562,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4506748251618661677, guid: 8dba5badc938040de8a8a78045c53605, type: 3}
     - target: {fileID: 6371023739648267799, guid: 3079698e749664826b74fb546e84c7b4, type: 3}
+      propertyPath: uiCanvas
+      value: 
+      objectReference: {fileID: 1075369325689184078}
+    - target: {fileID: 6371023739648267799, guid: 3079698e749664826b74fb546e84c7b4, type: 3}
       propertyPath: dontDestroyOnLoad
       value: 0
       objectReference: {fileID: 0}
@@ -675,6 +679,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e38a2afb433466f4098eae4309b47252, type: 3}
+--- !u!114 &1075369325689184078 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4632122555429156112, guid: e38a2afb433466f4098eae4309b47252, type: 3}
+  m_PrefabInstance: {fileID: 1075369325689184076}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0be8af5db9ac706488422191101c34f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2582626059883359321
 PrefabInstance:
   m_ObjectHideFlags: 0
