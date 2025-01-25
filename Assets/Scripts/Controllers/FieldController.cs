@@ -1,10 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class FieldController : MonoBehaviour
+public class FieldController : SingletonBehaviour<FieldController>
 {
     [SerializeField] private GameObject fieldGameObj;
     [SerializeField] private List<PlayerTerritory> playerTerritories;
+    [SerializeField] private List<PlayerRootNumberName> playerRootNumberNames;
 
     private void Awake()
     {
@@ -13,7 +14,7 @@ public class FieldController : MonoBehaviour
         {
            Territory territory = playerTerritories[i].territory;
            territory.SetPlayerNumberName(playerTerritories[i].PlayerNumberName);
-            territory.OnHitTerritory = HitTerritory;
+           territory.OnHitTerritory = HitTerritory;
         }
     }
 
@@ -30,5 +31,22 @@ public class FieldController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SpawnPlayers(List<PlayerData> spawnPlayerDataList)
+    {
+        for(int i = 0;i < playerRootNumberNames.Count;++i)
+        {
+            PlayerRootNumberName playerRootNumberName = playerRootNumberNames[i];
+            PlayerData spawnPlayerData = spawnPlayerDataList.Find((spawnPlayerData) => spawnPlayerData.playerNumberName == playerRootNumberName.playerNumberName);
+            if (spawnPlayerData != null)
+            {
+                playerRootNumberName.playerRoot.gameObject.SetActive(true);
+                playerRootNumberName.playerRoot.Init(spawnPlayerData);
+            } else
+            {
+                playerRootNumberName.playerRoot.gameObject.SetActive(false);
+            }
+        }
     }
 }
