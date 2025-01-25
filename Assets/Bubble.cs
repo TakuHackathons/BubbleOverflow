@@ -6,9 +6,8 @@ public class Bubble : MonoBehaviour
     public enum Color
     {
         Red,
-        Yellow,
-        Blue,
-        Purple
+        Green,
+        Blue
     }
 
     private enum State
@@ -21,13 +20,6 @@ public class Bubble : MonoBehaviour
     {
         color_ = color;
         rank_ = rank;
-        float rate = 0.5f * rank_;
-        this.transform.localScale = Vector3.one * rate;
-    }
-
-    public bool IsAlive()
-    {
-        return !is_dead_;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,7 +27,6 @@ public class Bubble : MonoBehaviour
     {
         highlight_ = false;
         state_ = State.Free;
-
     }
 
     // Update is called once per frame
@@ -57,8 +48,6 @@ public class Bubble : MonoBehaviour
         var p = this.transform.position;
         p += velocity_ * Time.deltaTime;
         this.transform.position = p;
-
-        CheckOutOfBounds();
     }
 
     void UpdateVelocity()
@@ -68,18 +57,13 @@ public class Bubble : MonoBehaviour
         velocity_ *= rate;
     }
 
-    void CheckOutOfBounds()
-    {
-        // TODO: èÍäOîªíË
-    }
-
 
     public void SetHighlight(bool b)
     {
         highlight_ = b;
     }
 
-    public void Pickup(Player_dummy player)
+    public void Pickup(Player player)
     {
         state_ = State.Hold;
         player_ = player;
@@ -105,43 +89,10 @@ public class Bubble : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     { // ê⁄êGÇµÇΩíºå„
-        if (is_dead_) return;
-
-        if (collider.gameObject.CompareTag("Bubble"))
-        {
-            var opponent = collider.gameObject.GetComponent<Bubble>();
-            if (opponent.is_dead_) return;
-
-            Vector3 mean_pos = (this.transform.position + opponent.transform.position) / 2.0f;
-
-            if (color_ == opponent.color_)
-            {
-                var factory = bubble_factory.GetComponent<BubbleFactory>();
-                factory.Make(color_, rank_ + opponent.rank_, mean_pos);
-            }
-            else
-            {
-                // TODO: å∏ì_èàóù
-            }
-            opponent.is_dead_ = true;
-            is_dead_ = true;
-            Destroy(collider.gameObject);
-            Destroy(this.gameObject);
-
-        }
-        if (collider.gameObject.CompareTag("Chara"))
-        {
-            // TODO: Ç–ÇÈÇ›
-        }
-        if (collider.gameObject.CompareTag("Ship"))
-        {
-            // TODO: ìæì_èàóù
-            Destroy(this.gameObject);
-        }
-
+        Destroy(collider.gameObject);
     }
 
-    private Player_dummy player_;
+    private Player player_;
     private State state_;
     private Color color_;
     private int rank_;
@@ -149,12 +100,9 @@ public class Bubble : MonoBehaviour
     private bool highlight_;
     private Vector3 put_position_;
 
-    private bool is_dead_ = false;
-
     private const float kFrictionVel = 0.01f;
     private const float kFrictionFix = 0.01f;
 
-    [SerializeField] private GameObject bubble_factory;
-
+    [SerializeField] private GameObject bubble;
 
 }
