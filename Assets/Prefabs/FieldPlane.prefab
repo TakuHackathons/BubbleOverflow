@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5845160308488948578}
   - component: {fileID: 6298237694801572906}
+  - component: {fileID: 437454612865806205}
+  - component: {fileID: 7262890541596837172}
   m_Layer: 0
   m_Name: Player2Territory
   m_TagString: Untagged
@@ -87,6 +89,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &437454612865806205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690066497461563871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e343781862b7bc408824cf8aea7e5e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 6298237694801572906}
+--- !u!65 &7262890541596837172
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690066497461563871}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9, y: 5.0600014, z: 0.20000005}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4506748251618661677
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +170,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldGameObj: {fileID: 919132149155446097, guid: 6db995a3333f39b419db661af6ac737e, type: 3}
+  playerTerritories:
+  - PlayerNumberName: 0
+    territory: {fileID: 1838160867872144327}
+  - PlayerNumberName: 1
+    territory: {fileID: 437454612865806205}
+  - PlayerNumberName: 2
+    territory: {fileID: 2277738039396442714}
+  - PlayerNumberName: 3
+    territory: {fileID: 6786505520720104815}
 --- !u!1 &5624626722443936729
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +189,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7949453913004658024}
   - component: {fileID: 8741445180759912680}
+  - component: {fileID: 6786505520720104815}
+  - component: {fileID: 2224396008600229800}
   m_Layer: 0
   m_Name: Player4Territory
   m_TagString: Untagged
@@ -221,6 +268,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6786505520720104815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5624626722443936729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e343781862b7bc408824cf8aea7e5e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8741445180759912680}
+--- !u!65 &2224396008600229800
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5624626722443936729}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9, y: 5.0600014, z: 0.20000005}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6776640225311450248
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +347,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1773255752385402290}
   - component: {fileID: 8289220628487886949}
+  - component: {fileID: 1838160867872144327}
+  - component: {fileID: 8243904108522167166}
   m_Layer: 0
   m_Name: Player1Territory
   m_TagString: Untagged
@@ -343,6 +426,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1838160867872144327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144287881115636641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e343781862b7bc408824cf8aea7e5e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8289220628487886949}
+--- !u!65 &8243904108522167166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144287881115636641}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9, y: 5.0600014, z: 0.20000005}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9030734591275184336
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +470,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7271833372915313535}
   - component: {fileID: 2570024830522517474}
+  - component: {fileID: 2277738039396442714}
+  - component: {fileID: 2697590211153815801}
   m_Layer: 0
   m_Name: Player3Territory
   m_TagString: Untagged
@@ -430,6 +549,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2277738039396442714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9030734591275184336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e343781862b7bc408824cf8aea7e5e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 2570024830522517474}
+--- !u!65 &2697590211153815801
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9030734591275184336}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9, y: 5.0600014, z: 0.20000005}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &249984956803609411
 PrefabInstance:
   m_ObjectHideFlags: 0
