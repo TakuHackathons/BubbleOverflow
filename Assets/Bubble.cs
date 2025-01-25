@@ -25,9 +25,6 @@ public class Bubble : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        velocity_.x = 0;
-        velocity_.y = 0;
-        velocity_.z = 1;
         highlight_ = false;
         state_ = State.Free;
     }
@@ -88,6 +85,11 @@ public class Bubble : MonoBehaviour
         this.transform.position = put_position_;
         velocity_ = new Vector3(0, 0, 0);
 
+    }
+
+    void OnTriggerEnter(Collider collider)
+    { // ê⁄êGÇµÇΩíºå„
+        Destroy(collider.gameObject);
     }
 
     private Player player_;
