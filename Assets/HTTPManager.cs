@@ -1,13 +1,9 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
+using System.Collections.Generic;
 using MessagePack.Resolvers;
 using MessagePack;
-
-public class SampleMsgPack
-{
-    public string hello;
-}
 
 public class HTTPManager : SingletonBehaviour<HTTPManager>
 {
@@ -32,7 +28,12 @@ public class HTTPManager : SingletonBehaviour<HTTPManager>
     {
         UnityWebRequest request = UnityWebRequest.Get($"{rootUrl}/msgpack");
         yield return request.SendWebRequest();
-        SampleMsgPack sample = MessagePackSerializer.Deserialize<SampleMsgPack>(request.downloadHandler.data, ContractlessStandardResolver.Options);
-        Debug.Log(sample.hello);
+
+        Dictionary<string, string> sample = MessagePackSerializer.Deserialize<Dictionary<string, string>>(request.downloadHandler.data, ContractlessStandardResolver.Options);
+        foreach(var kv in sample)
+        {
+            Debug.Log(kv.Key);
+            Debug.Log(kv.Value);
+        }
     }
 }
