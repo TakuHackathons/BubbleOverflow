@@ -12,4 +12,9 @@ public class GameController : SingletonBehaviour<GameController>
     void Update()
     {
     }
+
+    public void AddScore(int score)
+    {
+        this.Score = score;
+    }
 }
