@@ -8,10 +8,11 @@ public class GameController : SingletonBehaviour<GameController>
     public int Score { get; private set; }
     public PlayerData myPlayer { get; private set; }
 
-    void Start()
+    async void Start()
     {
         this.Score = 0;
         this.SetupPlayers();
+        WebsocketManager.Instance.Connect();
     }
 
     void Update()
