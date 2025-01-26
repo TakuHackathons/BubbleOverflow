@@ -23,13 +23,16 @@ public class GameController : SingletonBehaviour<GameController>
         wm.Connect();
     }
 
-    private void RecievedMessage(string messageBytes)
+    private void RecievedMessage(string message)
     {
-        WSBaseTemplate messageTmp = JsonConvert.DeserializeObject<WSBaseTemplate>(messageBytes);
-        Debug.Log(messageTmp.action);
-        if (messageTmp.action == ActionNames.connected)
+        WSBaseTemplate messageTmp = JsonConvert.DeserializeObject<WSBaseTemplate>(message);
+        if (messageTmp.action == "connected")
         {
             var userData = messageTmp.parseData<UserData>();
+            myPlayer = new PlayerData()
+            {
+                uuid = userData.userId,
+            };
             Debug.Log(userData.userId);
         }
     }
@@ -53,19 +56,22 @@ public class GameController : SingletonBehaviour<GameController>
         List<PlayerData> playerDataList = new List<PlayerData>();
         List<PlayerNumberName> playerNumberNames = Enum.GetValues(typeof(PlayerNumberName)).Cast<PlayerNumberName>().ToList();
         PlayerNumberName myPlayerName = playerNumberNames[UnityEngine.Random.Range(0, playerNumberNames.Count)];
+        playerDataList.Add(myPlayer);
         for (int i = 0; i < playerNumberNames.Count; ++i)
         {
             PlayerNumberName playerNumberName = playerNumberNames[i];
-            PlayerData playerData = new PlayerData()
-            {
-                uuid = Guid.NewGuid().ToString(),
-                playerNumberName = playerNumberName
-            };
             if (myPlayerName == playerNumberName)
             {
-                myPlayer = playerData;
+                myPlayer.playerNumberName = playerNumberName;
+            } else
+            {
+                PlayerData playerData = new PlayerData()
+                {
+                    uuid = Guid.NewGuid().ToString(),
+                    playerNumberName = playerNumberName
+                };
+                playerDataList.Add(playerData);
             }
-            playerDataList.Add(playerData);
         }
         FieldController.Instance.SpawnPlayers(playerDataList);
     }

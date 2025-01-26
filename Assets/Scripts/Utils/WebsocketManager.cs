@@ -3,12 +3,15 @@ using NativeWebSocket;
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Websocket.Client;
+using UnityEditor.PackageManager;
+using System.Threading.Tasks;
 
 public class WebsocketManager : SingletonBehaviour<WebsocketManager>
 {
     [SerializeField] private string webSocketUrl;
 
-    WebSocket websocket;
+    WebsocketClient websocket;
     private bool isConnected = false;
 
     public Action<string> OnRecievedMessage = null;
@@ -16,69 +19,36 @@ public class WebsocketManager : SingletonBehaviour<WebsocketManager>
     async public void Connect()
     {
         Debug.Log(webSocketUrl);
-        websocket = new WebSocket(webSocketUrl);
-
-        websocket.OnOpen += () =>
+        var url = new Uri(webSocketUrl);
+        websocket = new WebsocketClient(url);
+        websocket.MessageReceived.Subscribe((msg) =>
         {
-            Dictionary<string, string> openMessage = new Dictionary<string, string>();
-            openMessage["action"] = "connect";
-            SendWebSocketMessage(JsonConvert.SerializeObject(openMessage));
-//            SendWebSocketMessage(MessagePackSerializer.Serialize(openMessage, ContractlessStandardResolver.Options));
-        };
-
-        websocket.OnError += (e) =>
-        {
-            Debug.Log("Error! " + e);
-        };
-
-        websocket.OnClose += (e) =>
-        {
-            Debug.Log("Connection closed!");
-        };
-
-        websocket.OnMessage += (bytes) =>
-        {
-            Debug.Log("OnMessage!");
             if (OnRecievedMessage != null)
             {
-                OnRecievedMessage(System.Text.Encoding.UTF8.GetString(bytes));
+                OnRecievedMessage(msg.Text);
             }
-        };
-        await websocket.Connect();
-        isConnected = true;
-    }
+        });
+        await Task.Run(() => websocket.Start());
+        Dictionary<string, string> openMessage = new Dictionary<string, string>();
+        openMessage["action"] = "connect";
+        SendWebSocketMessage(JsonConvert.SerializeObject(openMessage));
 
-    void Update()
-    {
-#if !UNITY_WEBGL || UNITY_EDITOR
-        if (isConnected)
-        {
-            websocket.DispatchMessageQueue();
-        }
-#endif
+        isConnected = true;
     }
 
     async void SendWebSocketMessage(byte[] message)
     {
-        if (websocket.State == WebSocketState.Open)
-        {
-            // Sending bytes
-            await websocket.Send(message);
-        }
+        // Sending bytes
+        await Task.Run(() => websocket.Send(message));
     }
 
     async void SendWebSocketMessage(string message)
     {
-        if (websocket.State == WebSocketState.Open)
-        {
-            // Sending bytes
-            await websocket.SendText(message);
-        }
+        await Task.Run(() => websocket.Send(message));
     }
 
     private async void OnApplicationQuit()
     {
-        await websocket.Close();
         isConnected = false;
     }
 }
