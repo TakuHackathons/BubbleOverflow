@@ -13,7 +13,7 @@ public class BubbleTester : MonoBehaviour
     {
         ++count;
 
-        if (count % 60 == 0)
+        if (count % 200 == 0)
         {
             var factory = bubble_factory.GetComponent<BubbleFactory>();
             var bubble = factory.Make(color, 1, new Vector3(0, 0, 0));
@@ -24,7 +24,7 @@ public class BubbleTester : MonoBehaviour
                 case Bubble.Color.Blue: color = Bubble.Color.Red; break;
                     //case Bubble.Color.Purple: color = Bubble.Color.Red; break;
             }
-            bubble.Throw(new Vector3(Random.Range(-50.0f, 50.0f), 0, Random.Range(-50.0f, 50.0f)), new Vector3(Random.Range(-50.0f, 50.0f), 0, Random.Range(-50.0f, 50.0f)));
+            bubble.Throw(new Vector3(Random.Range(-50.0f, 50.0f), 0, Random.Range(-50.0f, 50.0f)), new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f)).normalized);
         }
     }
 

@@ -86,7 +86,7 @@ public class Bubble : MonoBehaviour
         put_position_ = this.transform.position;
         velocity_ = new Vector3(0, 0, 0);
         var p = this.transform.position;
-        p = player_.transform.position + new Vector3(0, 0, 5);
+        p = player_.transform.position + new Vector3(0, 0, hold_offset);
         this.transform.position = p;
 
     }
@@ -108,12 +108,12 @@ public class Bubble : MonoBehaviour
 
     float GetVelocityFromRank()
     {
-        if (rank_ == 1) return 5.0f;
-        if (rank_ == 2) return 4.0f;
-        if (rank_ == 3) return 3.0f;
-        if (rank_ == 4) return 2.0f;
-        if (rank_ == 5) return 1.0f;
-        return 0.5f;
+        if (rank_ == 1) return 280.0f;
+        if (rank_ == 2) return 200.0f;
+        if (rank_ == 3) return 140.0f;
+        if (rank_ == 4) return 80.0f;
+        if (rank_ == 5) return 40.0f;
+        return 1.0f;
     }
 
     void OnTriggerEnter(Collider collider)
@@ -168,6 +168,6 @@ public class Bubble : MonoBehaviour
     private const float kFrictionFix = 0.01f;
 
     [SerializeField] private GameObject bubble_factory;
-
+    [SerializeField] private float hold_offset;
 
 }

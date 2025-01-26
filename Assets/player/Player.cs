@@ -16,10 +16,11 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        animator_ = GetComponent<Animator>();
-        gamepad = Gamepad.current;
+        gamepad = Gamepad.all[gamepad_index]; Debug.Log(gamepad);
+        anime_ = new PlayerStateAnimation(GetComponent<Animator>());
         bubble_detector_ = GetComponentInChildren<BubbleDetector>();
-        //child = transform.Find("BubbleSensor").gameObject;
+
+        anime_.ResetAllTriggers();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -61,11 +62,6 @@ public class Player : MonoBehaviour
 
     void TransitionState()
     {
-        if (state_ == State.Damage)
-        {
-            damage_time_remain_ -= Time.deltaTime;
-            if (damage_time_remain_ <= 0) state_ = State.Idle;
-        }
         if (damage_time_remain_ > 0)
         {
             state_ = State.Damage;
@@ -77,31 +73,33 @@ public class Player : MonoBehaviour
             case State.Idle:
                 if (input_direction_.sqrMagnitude > 0.1f)
                 {
-                    state_ = State.Walk;
+                    ChangeState(State.Walk);
                 }
                 if (nearest_bubble_ && button_pressed_now_)
                 {
-                    state_ = State.Pickup;
-                    holding_bubble_ = nearest_bubble_;
-                    holding_bubble_.Pickup(this);
+                    ChangeState(State.Pickup);
                 }
                 break;
 
             case State.Walk:
                 if (input_direction_.sqrMagnitude < 0.1f)
                 {
-                    state_ = State.Walk;
+                    ChangeState(State.Idle);
                 }
                 if (nearest_bubble_ && button_pressed_now_)
                 {
-                    state_ = State.Pickup;
-                    holding_bubble_ = nearest_bubble_;
-                    holding_bubble_.Pickup(this);
+                    ChangeState(State.Pickup);
                 }
                 break;
 
             case State.Pickup:
                 // アニメが終わったらHoldに遷移
+                Debug.Log(anime_.IsInAnimation);
+                if (!anime_.IsInAnimation)
+                {
+                    ChangeState(State.Hold);
+                }
+                ChangeState(State.Hold);
                 break;
 
             case State.Hold:
@@ -109,33 +107,84 @@ public class Player : MonoBehaviour
                 {
                     if (input_direction_.sqrMagnitude > 0.1f)
                     {
-                        state_ = State.Throw;
-                        holding_bubble_.Throw(this.transform.position, input_direction_);
-                        holding_bubble_ = null;
+                        ChangeState(State.Throw);
                     }
-                    if (nearest_bubble_ && button_pressed_now_)
+                    else
                     {
-                        state_ = State.PutDown;
-                        holding_bubble_.Put();
-                        holding_bubble_ = null;
+                        ChangeState(State.PutDown);
                     }
+                }
+                if (!holding_bubble_ || !holding_bubble_.IsAlive())
+                {
+                    ChangeState(State.Idle);
                 }
                 break;
 
             case State.PutDown:
-                // アニメが終わったらstandに遷移
+                if (!anime_.IsInAnimation) ChangeState(State.Idle);
+                ChangeState(State.Idle);
                 break;
 
             case State.Throw:
-                // アニメが終わったらstandに遷移
+                if (!anime_.IsInAnimation) state_ = State.Idle;
+                ChangeState(State.Idle);
                 break;
 
             case State.Damage:
-                // 硬直が終わったらstandに遷移
+                if (damage_time_remain_ <= 0) ChangeState(State.Idle);
+                ChangeState(State.Idle);
                 break;
         }
 
-        Debug.Log(state_);
+    }
+
+    void ChangeState(State state)
+    {
+        switch (state)
+        {
+            case State.Idle:
+                state_ = State.Idle;
+                holding_bubble_ = null;
+                anime_.PlayIdle();
+                break;
+
+            case State.Walk:
+                state_ = State.Walk;
+                holding_bubble_ = null;
+                anime_.PlayWalk();
+                break;
+
+            case State.Pickup:
+                state_ = State.Pickup;
+                holding_bubble_ = nearest_bubble_;
+                holding_bubble_.Pickup(this);
+                anime_.PlayPickup();
+                break;
+
+            case State.Hold:
+                state_ = State.Hold;
+                anime_.PlayHold();
+                break;
+
+            case State.PutDown:
+                state_ = State.PutDown;
+                holding_bubble_.Put();
+                holding_bubble_ = null;
+                anime_.PlayPutDown();
+                break;
+
+            case State.Throw:
+                state_ = State.Throw;
+                var throw_dir = new Vector3(input_direction_.x, 0, input_direction_.y);
+                holding_bubble_.Throw(this.transform.position, throw_dir);
+                holding_bubble_ = null;
+                anime_.PlayThrow();
+                break;
+
+            case State.Damage:
+                damage_time_remain_ -= Time.deltaTime;
+                break;
+        }
     }
 
 
@@ -144,7 +193,6 @@ public class Player : MonoBehaviour
         switch (state_)
         {
             case State.Idle:
-                // アニメをstand
                 break;
 
             case State.Walk:
@@ -153,23 +201,19 @@ public class Player : MonoBehaviour
                 break;
 
             case State.Pickup:
-                // アニメをpickup
                 break;
 
             case State.Hold:
-                // アニメをkeep
                 break;
 
             case State.PutDown:
-                // アニメをputdown
                 break;
 
             case State.Throw:
-                // アニメをthrow
                 break;
 
             case State.Damage:
-                // アニメをdamage
+                damage_time_remain_ -= Time.deltaTime;
                 break;
         }
     }
@@ -192,7 +236,7 @@ public class Player : MonoBehaviour
     private bool is_left_ = true;
     private Gamepad gamepad;
     private BubbleDetector bubble_detector_;
-    private Animator animator_;
+    private PlayerStateAnimation anime_;
     private Bubble nearest_bubble_ = null;
     private Bubble holding_bubble_ = null;
 
@@ -204,5 +248,6 @@ public class Player : MonoBehaviour
     private float damage_time_remain_ = 0;
 
     [SerializeField] private float kMoveSpeed;
+    [SerializeField] private int gamepad_index;
 
 }

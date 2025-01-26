@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity_: {x: 0, y: 0, z: 0}
   bubble_factory: {fileID: 2063832725765154989, guid: bab0c601795edb343b42275b5f6ba616, type: 3}
+  hold_offset: 10
 --- !u!1 &1862421326772435837
 GameObject:
   m_ObjectHideFlags: 0
