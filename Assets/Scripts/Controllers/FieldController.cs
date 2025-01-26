@@ -1,7 +1,28 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-public class FieldController : MonoBehaviour
+public class FieldController : SingletonBehaviour<FieldController>
 {
+    [SerializeField] private GameObject fieldGameObj;
+    [SerializeField] private List<PlayerTerritory> playerTerritories;
+    [SerializeField] private List<PlayerRootNumberName> playerRootNumberNames;
+
+    private void Awake()
+    {
+        //Utils.InstantiateTo(this.gameObject, fieldGameObj);
+        for(int i = 0;i < playerTerritories.Count;++i)
+        {
+           Territory territory = playerTerritories[i].territory;
+           territory.SetPlayerNumberName(playerTerritories[i].PlayerNumberName);
+           territory.OnHitTerritory = HitTerritory;
+        }
+    }
+
+    private void HitTerritory(PlayerNumberName pnn, GameObject hitObject)
+    {
+        GameController.Instance.AddScore(1);
+    }
+
     void Start()
     {
         
@@ -10,5 +31,22 @@ public class FieldController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SpawnPlayers(List<PlayerData> spawnPlayerDataList)
+    {
+        for(int i = 0;i < playerRootNumberNames.Count;++i)
+        {
+            PlayerRootNumberName playerRootNumberName = playerRootNumberNames[i];
+            PlayerData spawnPlayerData = spawnPlayerDataList.Find((spawnPlayerData) => spawnPlayerData.playerNumberName == playerRootNumberName.playerNumberName);
+            if (spawnPlayerData != null)
+            {
+                playerRootNumberName.playerRoot.gameObject.SetActive(true);
+                playerRootNumberName.playerRoot.Init(spawnPlayerData);
+            } else
+            {
+                playerRootNumberName.playerRoot.gameObject.SetActive(false);
+            }
+        }
     }
 }
