@@ -79,20 +79,23 @@ public class Bubble : MonoBehaviour
         highlight_ = b;
     }
 
-    public void Pickup(Player_dummy player)
+    public void Pickup(Player player)
     {
         state_ = State.Hold;
         player_ = player;
         put_position_ = this.transform.position;
         velocity_ = new Vector3(0, 0, 0);
+        var p = this.transform.position;
+        p = player_.transform.position + new Vector3(0, 0, 5);
+        this.transform.position = p;
 
     }
 
-    public void Throw(Vector3 position, Vector3 velocity)
+    public void Throw(Vector3 position, Vector3 direction)
     {
         state_ = State.Free;
         this.transform.position = position;
-        velocity_ = velocity;
+        velocity_ = direction * GetVelocityFromRank();
     }
 
     public void Put()
@@ -101,6 +104,16 @@ public class Bubble : MonoBehaviour
         this.transform.position = put_position_;
         velocity_ = new Vector3(0, 0, 0);
 
+    }
+
+    float GetVelocityFromRank()
+    {
+        if (rank_ == 1) return 5.0f;
+        if (rank_ == 2) return 4.0f;
+        if (rank_ == 3) return 3.0f;
+        if (rank_ == 4) return 2.0f;
+        if (rank_ == 5) return 1.0f;
+        return 0.5f;
     }
 
     void OnTriggerEnter(Collider collider)
@@ -141,7 +154,7 @@ public class Bubble : MonoBehaviour
 
     }
 
-    private Player_dummy player_;
+    private Player player_;
     private State state_;
     private Color color_;
     private int rank_;
