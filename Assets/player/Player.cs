@@ -139,7 +139,6 @@ public class Player : MonoBehaviour
                 ChangeState(State.Idle);
                 break;
         }
-
     }
 
     void ChangeState(State state)

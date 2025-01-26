@@ -35,7 +35,7 @@ public class Bubble : MonoBehaviour
     {
         highlight_ = false;
         state_ = State.Free;
-
+        //SoundController.Instance.PlaySE(SE.BubblePop);
     }
 
     // Update is called once per frame
@@ -94,7 +94,7 @@ public class Bubble : MonoBehaviour
         var p = this.transform.position;
         p = player_.transform.position + new Vector3(0, 0, hold_offset);
         this.transform.position = p;
-
+        SoundController.Instance.PlaySE(SE.BubblePickup);
     }
 
     public void Throw(Vector3 position, Vector3 direction)
@@ -102,6 +102,7 @@ public class Bubble : MonoBehaviour
         state_ = State.Free;
         this.transform.position = position;
         velocity_ = direction * GetVelocityFromRank();
+        SoundController.Instance.PlaySE(SE.BubbleThrow);
     }
 
     public void Put()
@@ -109,7 +110,6 @@ public class Bubble : MonoBehaviour
         state_ = State.Free;
         this.transform.position = put_position_;
         velocity_ = new Vector3(0, 0, 0);
-
     }
 
     float GetVelocityFromRank()
@@ -155,6 +155,7 @@ public class Bubble : MonoBehaviour
             is_dead_ = true;
             Destroy(collider.gameObject);
             Destroy(this.gameObject);
+            SoundController.Instance.PlaySE(SE.BubbleCrush);
 
         }
         if (collider.gameObject.CompareTag("Chara"))
@@ -167,6 +168,7 @@ public class Bubble : MonoBehaviour
             var ship = collider.gameObject.GetComponent<Ship>();
             ship.AddScore(GetScoreByRank());
             Destroy(this.gameObject);
+            SoundController.Instance.PlaySE(SE.BubbleCrush);
         }
 
     }
