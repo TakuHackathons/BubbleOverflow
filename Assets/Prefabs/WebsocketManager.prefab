@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
-  webSocketUrl: wss://7414-240d-1b-53-500-54b3-f004-780e-e9ae.ngrok-free.app/ws
+  webSocketUrl: ws://127.0.0.1:8787/ws
