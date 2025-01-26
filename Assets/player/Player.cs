@@ -17,7 +17,9 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         animator_ = GetComponent<Animator>();
-        player_input_ = GetComponent<PlayerInput>();
+        gamepad = Gamepad.current;
+        bubble_detector_ = GetComponentInChildren<BubbleDetector>();
+        //child = transform.Find("BubbleSensor").gameObject;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,15 +31,28 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateNearestBubble();
         UpdateButton();
         TransitionState();
         UpdateProcess();
     }
+    void UpdateNearestBubble()
+    {
+        if (nearest_bubble_) nearest_bubble_.SetHighlight(false);
+        var maybe_bubble = bubble_detector_.GetNearestBubble();
+        if (!maybe_bubble) nearest_bubble_ = null;
+        else nearest_bubble_ = maybe_bubble.GetComponent<Bubble>();
+        if (nearest_bubble_) nearest_bubble_.SetHighlight(true);
+    }
 
     void UpdateButton()
     {
+        Vector2 input = new(gamepad.leftStick.x.value, gamepad.leftStick.y.value);
+        input_direction_ = Vector2.ClampMagnitude(input, 1.0f);
+
+        button_pressed_ = gamepad.buttonSouth.isPressed;
         button_pressed_now_ = false;
-        if (!button_pressed_previous_ && button_pressed_previous_)
+        if (!button_pressed_previous_ && button_pressed_)
         {
             button_pressed_now_ = true;
         }
@@ -46,7 +61,7 @@ public class Player : MonoBehaviour
 
     void TransitionState()
     {
-        if (state_ != State.Damage)
+        if (state_ == State.Damage)
         {
             damage_time_remain_ -= Time.deltaTime;
             if (damage_time_remain_ <= 0) state_ = State.Idle;
@@ -76,6 +91,12 @@ public class Player : MonoBehaviour
                 if (input_direction_.sqrMagnitude < 0.1f)
                 {
                     state_ = State.Walk;
+                }
+                if (nearest_bubble_ && button_pressed_now_)
+                {
+                    state_ = State.Pickup;
+                    holding_bubble_ = nearest_bubble_;
+                    holding_bubble_.Pickup(this);
                 }
                 break;
 
@@ -113,6 +134,8 @@ public class Player : MonoBehaviour
                 // d’¼‚ªI‚í‚Á‚½‚çstand‚É‘JˆÚ
                 break;
         }
+
+        Debug.Log(state_);
     }
 
 
@@ -160,18 +183,6 @@ public class Player : MonoBehaviour
         // TODO: êŠO”»’è
     }
 
-    public void OnMove(InputValue value)
-    {
-        Vector2 input = value.Get<Vector2>();
-        input_direction_ = Vector2.ClampMagnitude(input, 1.0f);
-        Debug.Log(input_direction_);
-    }
-
-    public void OnInteract(InputValue value)
-    {
-        button_pressed_ = value.isPressed;
-    }
-
     public void SetDamage(int rank)
     {
         damage_time_remain_ = 1;
@@ -179,7 +190,8 @@ public class Player : MonoBehaviour
 
     private State state_ = State.Idle;
     private bool is_left_ = true;
-    private PlayerInput player_input_;
+    private Gamepad gamepad;
+    private BubbleDetector bubble_detector_;
     private Animator animator_;
     private Bubble nearest_bubble_ = null;
     private Bubble holding_bubble_ = null;

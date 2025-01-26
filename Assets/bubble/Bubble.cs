@@ -85,6 +85,9 @@ public class Bubble : MonoBehaviour
         player_ = player;
         put_position_ = this.transform.position;
         velocity_ = new Vector3(0, 0, 0);
+        var p = this.transform.position;
+        p = player_.transform.position + new Vector3(0, 0, 5);
+        this.transform.position = p;
 
     }
 
