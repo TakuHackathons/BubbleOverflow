@@ -15,7 +15,6 @@ public class PlayerStateAnimation
     {
         animator.ResetTrigger("Pickup");
         animator.ResetTrigger("Hold");
-        animator.ResetTrigger("PutDown");
         animator.ResetTrigger("Throw");
     }
 
@@ -45,7 +44,7 @@ public class PlayerStateAnimation
 
     public void PlayPutDown()
     {
-        animator.SetTrigger("PutDown");
+        animator.SetTrigger("Throw");
         IsInAnimation = true;
     }
 
