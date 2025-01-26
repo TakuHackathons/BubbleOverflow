@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using System.Linq;
+using Newtonsoft.Json;
 
 public class GameController : SingletonBehaviour<GameController>
 {
@@ -17,7 +18,20 @@ public class GameController : SingletonBehaviour<GameController>
     {
         this.Score = 0;
         this.SetupPlayers();
-        WebsocketManager.Instance.Connect();
+        var wm = WebsocketManager.Instance;
+        wm.OnRecievedMessage = RecievedMessage;
+        wm.Connect();
+    }
+
+    private void RecievedMessage(string messageBytes)
+    {
+        WSBaseTemplate messageTmp = JsonConvert.DeserializeObject<WSBaseTemplate>(messageBytes);
+        Debug.Log(messageTmp.action);
+        if (messageTmp.action == ActionNames.connected)
+        {
+            var userData = messageTmp.parseData<UserData>();
+            Debug.Log(userData.userId);
+        }
     }
 
     void Update()

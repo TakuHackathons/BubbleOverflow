@@ -11,7 +11,6 @@ public class HTTPManager : SingletonBehaviour<HTTPManager>
 
     void Start()
     {
-        SendRequest();
     }
 
     void Update()
@@ -19,7 +18,7 @@ public class HTTPManager : SingletonBehaviour<HTTPManager>
         
     }
 
-    public void SendRequest()
+    public void SendRequest(string apiPath)
     {
         StartCoroutine(SendRequestRoutine());
     }

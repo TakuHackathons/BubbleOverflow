@@ -1,6 +1,8 @@
 using UnityEngine;
 using NativeWebSocket;
 using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 public class WebsocketManager : SingletonBehaviour<WebsocketManager>
 {
@@ -9,16 +11,19 @@ public class WebsocketManager : SingletonBehaviour<WebsocketManager>
     WebSocket websocket;
     private bool isConnected = false;
 
-    public Action<byte[]> OnRecievedMessage = null;
+    public Action<string> OnRecievedMessage = null;
 
-    // Start is called before the first frame update
-    async void Start()
+    async public void Connect()
     {
+        Debug.Log(webSocketUrl);
         websocket = new WebSocket(webSocketUrl);
 
         websocket.OnOpen += () =>
         {
-            Debug.Log("Connection open!");
+            Dictionary<string, string> openMessage = new Dictionary<string, string>();
+            openMessage["action"] = "connect";
+            SendWebSocketMessage(JsonConvert.SerializeObject(openMessage));
+//            SendWebSocketMessage(MessagePackSerializer.Serialize(openMessage, ContractlessStandardResolver.Options));
         };
 
         websocket.OnError += (e) =>
@@ -34,16 +39,11 @@ public class WebsocketManager : SingletonBehaviour<WebsocketManager>
         websocket.OnMessage += (bytes) =>
         {
             Debug.Log("OnMessage!");
-            Debug.Log(bytes);
             if (OnRecievedMessage != null)
             {
-                OnRecievedMessage(bytes);
+                OnRecievedMessage(System.Text.Encoding.UTF8.GetString(bytes));
             }
         };
-    }
-
-    async public void Connect()
-    {
         await websocket.Connect();
         isConnected = true;
     }
@@ -58,15 +58,21 @@ public class WebsocketManager : SingletonBehaviour<WebsocketManager>
 #endif
     }
 
-    async void SendWebSocketMessage()
+    async void SendWebSocketMessage(byte[] message)
     {
         if (websocket.State == WebSocketState.Open)
         {
             // Sending bytes
-            await websocket.Send(new byte[] { 10, 20, 30 });
+            await websocket.Send(message);
+        }
+    }
 
-            // Sending plain text
-            await websocket.SendText("plain text message");
+    async void SendWebSocketMessage(string message)
+    {
+        if (websocket.State == WebSocketState.Open)
+        {
+            // Sending bytes
+            await websocket.SendText(message);
         }
     }
 
