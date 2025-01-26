@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+﻿// PlayerStateMachine.cs
+using UnityEngine;
 
 public class PlayerStateMachine
 {
     private readonly PlayerController player;
-    private readonly Animator animator;
+    private readonly PlayerStateAnimation stateAnimation;
     private PlayerStateType currentStateType;
-    private bool isInAnimation = false;
 
     public enum PlayerStateType
     {
@@ -20,14 +20,14 @@ public class PlayerStateMachine
     public PlayerStateMachine(PlayerController playerController)
     {
         player = playerController;
-        animator = player.GetComponent<Animator>();
+        stateAnimation = new PlayerStateAnimation(player.GetComponent<Animator>());
         currentStateType = PlayerStateType.Idle;
+        stateAnimation.PlayIdle();
     }
 
     public void ChangeState(PlayerStateType newState)
     {
-        // アニメーション中は特定の状態遷移のみ許可
-        if (isInAnimation &&
+        if (stateAnimation.IsInAnimation &&
             !(currentStateType == PlayerStateType.Walk && newState == PlayerStateType.Idle) &&
             !(currentStateType == PlayerStateType.Idle && newState == PlayerStateType.Walk))
         {
@@ -41,15 +41,13 @@ public class PlayerStateMachine
 
     private void ExitCurrentState()
     {
-        // 全てのアニメーショントリガーをリセット
-        animator.ResetTrigger("Pickup");
-        animator.ResetTrigger("Hold");
-        animator.ResetTrigger("PutDown");
-        animator.ResetTrigger("Throw");
+        stateAnimation.ResetAllTriggers();
 
         switch (currentStateType)
         {
             case PlayerStateType.Hold:
+            case PlayerStateType.PutDown:
+            case PlayerStateType.Throw:
                 player.ReleaseHeldObject();
                 break;
         }
@@ -60,28 +58,22 @@ public class PlayerStateMachine
         switch (currentStateType)
         {
             case PlayerStateType.Idle:
-                animator.SetFloat("Speed", 0f);
-                isInAnimation = false;
+                stateAnimation.PlayIdle();
                 break;
             case PlayerStateType.Walk:
-                animator.SetFloat("Speed", 1f);
-                isInAnimation = false;
+                stateAnimation.PlayWalk();
                 break;
             case PlayerStateType.Pickup:
-                animator.SetTrigger("Pickup");
-                isInAnimation = true;
+                stateAnimation.PlayPickup();
                 break;
             case PlayerStateType.Hold:
-                animator.SetTrigger("Hold");
-                isInAnimation = false;
+                stateAnimation.PlayHold();
                 break;
             case PlayerStateType.PutDown:
-                animator.SetTrigger("PutDown");
-                isInAnimation = true;
+                stateAnimation.PlayPutDown();
                 break;
             case PlayerStateType.Throw:
-                animator.SetTrigger("Throw");
-                isInAnimation = true;
+                stateAnimation.PlayThrow();
                 var heldObject = player.GetHeldObject();
                 if (heldObject != null)
                 {
@@ -91,17 +83,12 @@ public class PlayerStateMachine
         }
     }
 
-    public void Update()
-    {
-    }
-
     public void FixedUpdate()
     {
-        // アニメーション中は移動状態の更新をスキップ
-        if (isInAnimation) return;
+        if (stateAnimation.IsInAnimation) return;
 
         float speed = player.GetMoveDirection().magnitude;
-        animator.SetFloat("Speed", speed);
+        stateAnimation.UpdateSpeed(speed);
 
         if (currentStateType == PlayerStateType.Walk ||
             currentStateType == PlayerStateType.Hold)
@@ -126,7 +113,7 @@ public class PlayerStateMachine
 
     public void OnAnimationComplete()
     {
-        isInAnimation = false;
+        stateAnimation.OnAnimationComplete();
         switch (currentStateType)
         {
             case PlayerStateType.Pickup:

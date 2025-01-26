@@ -25,11 +25,6 @@ public class PlayerController : MonoBehaviour
                         RigidbodyConstraints.FreezePositionY;
     }
 
-    private void Update()
-    {
-        stateMachine.Update();
-    }
-
     private void FixedUpdate()
     {
         stateMachine.FixedUpdate();
