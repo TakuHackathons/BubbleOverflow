@@ -1,21 +1,21 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class FieldController : SingletonBehaviour<FieldController>
 {
     [SerializeField] private GameObject fieldGameObj;
-    [SerializeField] private List<PlayerTerritory> playerTerritories;
+    //[SerializeField] private List<PlayerTerritory> playerTerritories;
     [SerializeField] private List<PlayerRootNumberName> playerRootNumberNames;
 
     private void Awake()
     {
         //Utils.InstantiateTo(this.gameObject, fieldGameObj);
-        for(int i = 0;i < playerTerritories.Count;++i)
-        {
-           Territory territory = playerTerritories[i].territory;
-           territory.SetPlayerNumberName(playerTerritories[i].PlayerNumberName);
-           territory.OnHitTerritory = HitTerritory;
-        }
+        //for(int i = 0;i < playerTerritories.Count;++i)
+        //{
+        //   Territory territory = playerTerritories[i].territory;
+        //   territory.SetPlayerNumberName(playerTerritories[i].PlayerNumberName);
+        //   territory.OnHitTerritory = HitTerritory;
+        //}
     }
 
     private void HitTerritory(PlayerNumberName pnn, GameObject hitObject)
@@ -25,17 +25,18 @@ public class FieldController : SingletonBehaviour<FieldController>
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+
     }
 
     public void SpawnPlayers(List<PlayerData> spawnPlayerDataList)
     {
-        for(int i = 0;i < playerRootNumberNames.Count;++i)
+        /*
+        for (int i = 0; i < playerRootNumberNames.Count; ++i)
         {
             PlayerRootNumberName playerRootNumberName = playerRootNumberNames[i];
             PlayerData spawnPlayerData = spawnPlayerDataList.Find((spawnPlayerData) => spawnPlayerData.playerNumberName == playerRootNumberName.playerNumberName);
@@ -43,10 +44,12 @@ public class FieldController : SingletonBehaviour<FieldController>
             {
                 playerRootNumberName.playerRoot.gameObject.SetActive(true);
                 playerRootNumberName.playerRoot.Init(spawnPlayerData);
-            } else
+            }
+            else
             {
                 playerRootNumberName.playerRoot.gameObject.SetActive(false);
             }
         }
+        */
     }
 }

@@ -238,7 +238,6 @@ public class Player : MonoBehaviour
     }
 
     private State state_ = State.Idle;
-    private bool is_left_ = true;
     private Gamepad gamepad;
     private BubbleDetector bubble_detector_;
     private PlayerStateAnimation anime_;
