@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using UnityEngine;
 
 public class RoomUI : MonoBehaviour
@@ -12,5 +13,16 @@ public class RoomUI : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnClickCreateRoomButton()
+    {
+        Debug.Log("createRoom");
+        WSBaseTemplate message = new WSBaseTemplate();
+        message.action = "createdRoom";
+        var user = new UserData();
+        user.userId = GameController.Instance.myPlayer.uuid;
+        message.data = user;
+        WebsocketManager.Instance.SendWebSocketMessage(JsonConvert.SerializeObject(message));
     }
 }

@@ -38,13 +38,13 @@ public class WebsocketManager : SingletonBehaviour<WebsocketManager>
         isConnected = true;
     }
 
-    async void SendWebSocketMessage(byte[] message)
+    public async void SendWebSocketMessage(byte[] message)
     {
         // Sending bytes
         await Task.Run(() => websocket.Send(message));
     }
 
-    async void SendWebSocketMessage(string message)
+    public async void SendWebSocketMessage(string message)
     {
         await Task.Run(() => websocket.Send(message));
     }
