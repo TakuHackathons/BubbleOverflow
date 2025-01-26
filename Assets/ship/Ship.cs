@@ -29,6 +29,11 @@ public class Ship : MonoBehaviour
         return player_index_;
     }
 
+    public int GetScore()
+    {
+        return score_;
+    }
+
     private int score_;
     [SerializeField] int player_index_;
 }
