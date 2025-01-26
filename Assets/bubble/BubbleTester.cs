@@ -5,18 +5,24 @@ public class BubbleTester : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        FirstInitiate();
+        TogglePower(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        ++count;
+        if (!power) return;
 
-        if (count % 200 == 0)
+        count += Time.deltaTime;
+
+        if (count > 1.5)
         {
+            count = 0;
             var factory = bubble_factory.GetComponent<BubbleFactory>();
-            var bubble = factory.Make(color, 1, new Vector3(0, 0, 0));
+            var angle = Random.Range(0, Mathf.PI * 2);
+            var amp = Random.Range(0.0f, 50.0f);
+            var bubble = factory.Make(color, 1, new Vector3(Mathf.Cos(angle) * amp, 0, Mathf.Sin(angle) * amp));
             switch (color)
             {
                 case Bubble.Color.Red: color = Bubble.Color.Yellow; break;
@@ -24,11 +30,28 @@ public class BubbleTester : MonoBehaviour
                 case Bubble.Color.Blue: color = Bubble.Color.Red; break;
                     //case Bubble.Color.Purple: color = Bubble.Color.Red; break;
             }
-            bubble.Throw(new Vector3(Random.Range(-50.0f, 50.0f), 0, Random.Range(-50.0f, 50.0f)), new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f)).normalized);
         }
     }
 
-    int count = 0;
+    public void FirstInitiate()
+    {
+        var factory = bubble_factory.GetComponent<BubbleFactory>();
+        for (int k = 0; k < 12; ++k)
+        {
+            Bubble.Color col = (Bubble.Color)Random.Range(0, 2);
+            var radius = 60.0f;
+            var angle = Mathf.PI * 2 * k / 12;
+            factory.Make(col, 1, new Vector3(radius * Mathf.Cos(angle), 0, radius * Mathf.Sin(angle)));
+        }
+    }
+
+    void TogglePower(bool b)
+    {
+        power = b;
+    }
+
+    bool power = false;
+    float count = 0;
     Bubble.Color color = Bubble.Color.Blue;
     [SerializeField] private GameObject bubble_factory;
 }

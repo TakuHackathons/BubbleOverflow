@@ -16,7 +16,9 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        gamepad = Gamepad.all[gamepad_index]; Debug.Log(gamepad);
+        var gamepad_list = Gamepad.all;
+        if (gamepad_index < gamepad_list.Count) gamepad = Gamepad.all[gamepad_index];
+        else gamepad = null;
         anime_ = new PlayerStateAnimation(GetComponent<Animator>());
         bubble_detector_ = GetComponentInChildren<BubbleDetector>();
 
@@ -222,9 +224,12 @@ public class Player : MonoBehaviour
     {
         var p = this.transform.position;
         p += new Vector3(input_direction_.x, 0, input_direction_.y) * kMoveSpeed * Time.deltaTime;
-        this.transform.position = p;
 
-        // TODO: êŠO”»’è
+        // êŠO”»’è
+        var norm2 = p.x * p.x + (p.z + 5) * (p.z + 5);
+        if (norm2 > kEdgeOfField * kEdgeOfField) p = p / Mathf.Sqrt(norm2) * kEdgeOfField;
+
+        this.transform.position = p;
     }
 
     public void SetDamage(int rank)
@@ -246,6 +251,8 @@ public class Player : MonoBehaviour
     private bool button_pressed_now_ = false;
 
     private float damage_time_remain_ = 0;
+
+    private const float kEdgeOfField = 90.0f;
 
     [SerializeField] private float kMoveSpeed;
     [SerializeField] private int gamepad_index;
