@@ -101,7 +101,6 @@ public class Player : MonoBehaviour
 
             case State.Pickup:
                 // ƒAƒjƒ‚ªI‚í‚Á‚½‚çHold‚É‘JˆÚ
-                Debug.Log(anime_.IsInAnimation);
                 if (stop_timer_ <= 0)
                 {
                     ChangeState(State.Hold);
@@ -127,11 +126,17 @@ public class Player : MonoBehaviour
                 break;
 
             case State.PutDown:
-                if (stop_timer_ <= 0) ChangeState(State.Idle);
+                if (stop_timer_ <= 0)
+                {
+                    ChangeState(State.Idle);
+                }
                 break;
 
             case State.Throw:
-                if (stop_timer_ <= 0) state_ = State.Idle;
+                if (stop_timer_ <= 0)
+                {
+                    ChangeState(State.Idle);
+                }
                 break;
 
             case State.Damage:
@@ -162,7 +167,7 @@ public class Player : MonoBehaviour
                 holding_bubble_ = nearest_bubble_;
                 holding_bubble_.Pickup(this);
                 anime_.PlayPickup();
-                stop_timer_ = 0.5f;
+                stop_timer_ = 0.7f;
                 break;
 
             case State.Hold:

@@ -114,12 +114,12 @@ public class Bubble : MonoBehaviour
 
     float GetVelocityFromRank()
     {
-        if (rank_ == 1) return 280.0f;
+        if (rank_ == 1) return 250.0f;
         if (rank_ == 2) return 200.0f;
-        if (rank_ == 3) return 140.0f;
-        if (rank_ == 4) return 80.0f;
-        if (rank_ == 5) return 40.0f;
-        return 1.0f;
+        if (rank_ == 3) return 150.0f;
+        if (rank_ == 4) return 100.0f;
+        if (rank_ == 5) return 50.0f;
+        return 25.0f;
     }
 
     int GetScoreByRank()

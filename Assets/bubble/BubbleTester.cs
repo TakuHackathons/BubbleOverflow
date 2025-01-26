@@ -16,7 +16,7 @@ public class BubbleTester : MonoBehaviour
 
         count += Time.deltaTime;
 
-        if (count > 0.3)
+        if (count > 0.45f)
         {
             count = 0;
             var factory = bubble_factory.GetComponent<BubbleFactory>();
