@@ -2,10 +2,10 @@ using Newtonsoft.Json;
 
 public class WSBaseTemplate
 {
-    public ActionNames action;
-    public string data;
+    public string action;
+    public object data;
 
     public T parseData<T>() {
-      return JsonConvert.DeserializeObject<T>(this.data);
+      return JsonConvert.DeserializeObject<T>(this.data.ToString());
     }
 }
