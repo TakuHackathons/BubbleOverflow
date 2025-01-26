@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         stateMachine = new PlayerStateMachine(this);
 
-        // 物理設定
         rb.constraints = RigidbodyConstraints.FreezeRotationX |
                         RigidbodyConstraints.FreezeRotationZ |
                         RigidbodyConstraints.FreezePositionY;
@@ -63,26 +62,20 @@ public class PlayerController : MonoBehaviour
             {
                 stateMachine.ChangeState(PlayerStateMachine.PlayerStateType.Pickup);
             }
+            Debug.Log(currentState);
         }
     }
 
     public void UpdateMovement()
     {
-        if (moveDirection.magnitude > 0.1f)
-        {
-            // 移動と回転
-            Vector3 movement = moveDirection * moveSpeed * Time.fixedDeltaTime;
-            rb.MovePosition(rb.position + movement);
+        Vector3 movement = moveDirection * moveSpeed * Time.fixedDeltaTime;
+        rb.MovePosition(rb.position + movement);
 
-            // プレイヤーの向き
-            transform.rotation = Quaternion.LookRotation(moveDirection);
-
-            // アニメーション
-            animator.SetFloat("Speed", moveDirection.magnitude);
-        }
-        else
+        if (moveDirection.x != 0)
         {
-            animator.SetFloat("Speed", 0f);
+            Vector3 newScale = transform.localScale;
+            newScale.x = moveDirection.x < 0 ? 1 : -1;
+            transform.localScale = newScale;
         }
     }
 
@@ -117,7 +110,6 @@ public class PlayerController : MonoBehaviour
         return moveDirection;
     }
 
-    // アニメーションイベントから呼ばれる
     public void OnAnimationComplete()
     {
         stateMachine.OnAnimationComplete();
