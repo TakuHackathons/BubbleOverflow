@@ -70,7 +70,13 @@ public class Bubble : MonoBehaviour
 
     void CheckOutOfBounds()
     {
-        // TODO: èÍäOîªíË
+        var p = transform.position;
+        var norm2 = p.x * p.x + p.z * p.z;
+        if (norm2 > kBoundOfField * kBoundOfField)
+        {
+            p = p / Mathf.Abs(norm2) * kBoundOfField;
+        }
+        transform.position = p;
     }
 
 
@@ -116,6 +122,16 @@ public class Bubble : MonoBehaviour
         return 1.0f;
     }
 
+    int GetScoreByRank()
+    {
+        if (rank_ == 1) return 1;
+        if (rank_ == 2) return 4;
+        if (rank_ == 3) return 9;
+        if (rank_ == 4) return 16;
+        if (rank_ == 5) return 25;
+        return 36;
+    }
+
     void OnTriggerEnter(Collider collider)
     { // ê⁄êGÇµÇΩíºå„
         if (is_dead_) return;
@@ -134,7 +150,6 @@ public class Bubble : MonoBehaviour
             }
             else
             {
-                // TODO: å∏ì_èàóù
             }
             opponent.is_dead_ = true;
             is_dead_ = true;
@@ -149,6 +164,8 @@ public class Bubble : MonoBehaviour
         if (collider.gameObject.CompareTag("Ship"))
         {
             // TODO: ìæì_èàóù
+            var ship = collider.gameObject.GetComponent<Ship>();
+            ship.AddScore(GetScoreByRank());
             Destroy(this.gameObject);
         }
 
@@ -166,6 +183,8 @@ public class Bubble : MonoBehaviour
 
     private const float kFrictionVel = 0.01f;
     private const float kFrictionFix = 0.01f;
+
+    private const float kBoundOfField = 100.0f;
 
     [SerializeField] private GameObject bubble_factory;
     [SerializeField] private float hold_offset;
