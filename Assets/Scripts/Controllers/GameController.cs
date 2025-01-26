@@ -13,16 +13,17 @@ public class GameController : SingletonBehaviour<GameController>
     [SerializeField] float timeupSecond = 60f;
     
     private float currentTimeSecond = 0f;
+    private Queue<Action> executeQueueTask = new Queue<Action>();
 
     async void Start()
     {
         this.Score = 0;
-        this.SetupPlayers();
         var wm = WebsocketManager.Instance;
         wm.OnRecievedMessage = RecievedMessage;
         wm.Connect();
     }
 
+    // backgroundTasks
     private void RecievedMessage(string message)
     {
         WSBaseTemplate messageTmp = JsonConvert.DeserializeObject<WSBaseTemplate>(message);
@@ -33,7 +34,7 @@ public class GameController : SingletonBehaviour<GameController>
             {
                 uuid = userData.userId,
             };
-            Debug.Log(userData.userId);
+            executeQueueTask.Enqueue(recordUserIdAndSetupPlayers);
         }
     }
 
@@ -44,6 +45,21 @@ public class GameController : SingletonBehaviour<GameController>
         {
             uiCanvas.ShowResultWindow();
         }
+        if (executeQueueTask.Count > 0)
+        {
+           var executeTask = executeQueueTask.Dequeue();
+            executeTask();
+        }
+    }
+
+    private void recordUserIdAndSetupPlayers()
+    {
+        if (!PlayerPrefs.HasKey("userUuid"))
+        {
+            PlayerPrefs.SetString("userUuid", myPlayer.uuid);
+            PlayerPrefs.Save();
+        }
+        this.SetupPlayers();
     }
 
     public void AddScore(int score)

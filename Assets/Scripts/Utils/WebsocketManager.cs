@@ -18,7 +18,6 @@ public class WebsocketManager : SingletonBehaviour<WebsocketManager>
 
     async public void Connect()
     {
-        Debug.Log(webSocketUrl);
         var url = new Uri(webSocketUrl);
         websocket = new WebsocketClient(url);
         websocket.MessageReceived.Subscribe((msg) =>
@@ -29,8 +28,11 @@ public class WebsocketManager : SingletonBehaviour<WebsocketManager>
             }
         });
         await Task.Run(() => websocket.Start());
-        Dictionary<string, string> openMessage = new Dictionary<string, string>();
-        openMessage["action"] = "connect";
+        WSBaseTemplate openMessage = new WSBaseTemplate();
+        openMessage.action = "connect";
+        var user = new UserData();
+        user.userId = PlayerPrefs.GetString("userUuid", null);
+        openMessage.data = user;
         SendWebSocketMessage(JsonConvert.SerializeObject(openMessage));
 
         isConnected = true;
