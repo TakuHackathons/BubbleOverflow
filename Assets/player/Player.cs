@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
 
     void UpdateButton()
     {
+        if (gamepad == null) return;
         Vector2 input = new(gamepad.leftStick.x.value, gamepad.leftStick.y.value);
         input_direction_ = Vector2.ClampMagnitude(input, 1.0f);
 
@@ -67,6 +68,10 @@ public class Player : MonoBehaviour
         if (damage_time_remain_ > 0)
         {
             state_ = State.Damage;
+        }
+        if (stop_timer_ > 0)
+        {
+            stop_timer_ -= Time.deltaTime;
         }
 
 
@@ -97,11 +102,10 @@ public class Player : MonoBehaviour
             case State.Pickup:
                 // アニメが終わったらHoldに遷移
                 Debug.Log(anime_.IsInAnimation);
-                if (!anime_.IsInAnimation)
+                if (stop_timer_ <= 0)
                 {
                     ChangeState(State.Hold);
                 }
-                ChangeState(State.Hold);
                 break;
 
             case State.Hold:
@@ -123,13 +127,11 @@ public class Player : MonoBehaviour
                 break;
 
             case State.PutDown:
-                if (!anime_.IsInAnimation) ChangeState(State.Idle);
-                ChangeState(State.Idle);
+                if (stop_timer_ <= 0) ChangeState(State.Idle);
                 break;
 
             case State.Throw:
-                if (!anime_.IsInAnimation) state_ = State.Idle;
-                ChangeState(State.Idle);
+                if (stop_timer_ <= 0) state_ = State.Idle;
                 break;
 
             case State.Damage:
@@ -161,6 +163,7 @@ public class Player : MonoBehaviour
                 holding_bubble_ = nearest_bubble_;
                 holding_bubble_.Pickup(this);
                 anime_.PlayPickup();
+                stop_timer_ = 0.5f;
                 break;
 
             case State.Hold:
@@ -173,6 +176,7 @@ public class Player : MonoBehaviour
                 holding_bubble_.Put();
                 holding_bubble_ = null;
                 anime_.PlayPutDown();
+                stop_timer_ = 0.5f;
                 break;
 
             case State.Throw:
@@ -181,6 +185,7 @@ public class Player : MonoBehaviour
                 holding_bubble_.Throw(this.transform.position, throw_dir);
                 holding_bubble_ = null;
                 anime_.PlayThrow();
+                stop_timer_ = 0.5f;
                 break;
 
             case State.Damage:
@@ -198,7 +203,6 @@ public class Player : MonoBehaviour
                 break;
 
             case State.Walk:
-                // アニメをwalk
                 MovePlayer();
                 break;
 
@@ -252,6 +256,8 @@ public class Player : MonoBehaviour
     private float damage_time_remain_ = 0;
 
     private const float kEdgeOfField = 90.0f;
+
+    private float stop_timer_ = 0;
 
     [SerializeField] private float kMoveSpeed;
     [SerializeField] private int gamepad_index;
