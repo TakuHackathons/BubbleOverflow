@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class GameUICanvas : MonoBehaviour
 {
-    //[SerializeField] private TextMeshProUGUI timeCounterText;
-    //[SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private RoomUI roomUi;
+    [SerializeField] private InGameUI inGameUI;
 
     [SerializeField] private GameObject ship_dog;
     [SerializeField] private GameObject ship_cat;

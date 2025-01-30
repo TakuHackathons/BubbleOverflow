@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class RoomUI : MonoBehaviour
 {
+    [SerializeField] private GameObject roomListView;
+    [SerializeField] private GameObject roomListCellObject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,7 +19,6 @@ public class RoomUI : MonoBehaviour
 
     public void OnClickCreateRoomButton()
     {
-        Debug.Log("createRoom");
         WSBaseTemplate message = new WSBaseTemplate();
         message.action = "createdRoom";
         var user = new UserData();
