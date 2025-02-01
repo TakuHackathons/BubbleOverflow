@@ -19,6 +19,8 @@ public class TestRecord
 
 public class FirebaseDatabaseManager : SingletonBehaviour<FirebaseDatabaseManager>
 {
+    private FirebaseClient firebaseClient;
+
     private void Awake()
     {
         DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] { Path.Combine(Application.streamingAssetsPath, ".env") }));
@@ -27,11 +29,11 @@ public class FirebaseDatabaseManager : SingletonBehaviour<FirebaseDatabaseManage
     async void Start()
     {
         String firebaseDatabaseUrl = EnvReader.GetStringValue("FIREBASE_REALTIME_DATABASE_URL");
-        var firebase = new FirebaseClient(firebaseDatabaseUrl, new FirebaseOptions
+        firebaseClient = new FirebaseClient(firebaseDatabaseUrl, new FirebaseOptions
         {
             AuthTokenAsyncFactory = () => LoginAsync()
         });
-        var dino = await firebase.Child("dinosaurs").PostAsync(new TestRecord());
+        // var dino = await firebaseClient.Child("dinosaurs").PostAsync(new TestRecord());
         /*
 FirestoreDb db = FirestoreDb.Create("bubbleoverflow-ea9b3");
 CollectionReference collection = db.Collection("users");
