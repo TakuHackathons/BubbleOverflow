@@ -18,9 +18,6 @@ public class GameController : SingletonBehaviour<GameController>
     async void Start()
     {
         this.Score = 0;
-        var wm = WebsocketManager.Instance;
-        wm.OnRecievedMessage = RecievedMessage;
-        wm.Connect();
     }
 
     // backgroundTasks
