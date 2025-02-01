@@ -25,10 +25,10 @@ public class GameUICanvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text_dog.text = $"{ship_dog.GetComponent<Ship>().GetScore()}";
-        text_cat.text = $"{ship_cat.GetComponent<Ship>().GetScore()}";
-        text_bunny.text = $"{ship_bunny.GetComponent<Ship>().GetScore()}";
-        text_horse.text = $"{ship_horse.GetComponent<Ship>().GetScore()}";
+        //text_dog.text = $"{ship_dog.GetComponent<Ship>().GetScore()}";
+        //text_cat.text = $"{ship_cat.GetComponent<Ship>().GetScore()}";
+        //text_bunny.text = $"{ship_bunny.GetComponent<Ship>().GetScore()}";
+        //text_horse.text = $"{ship_horse.GetComponent<Ship>().GetScore()}";
 
         //currentTimeSecond += Time.deltaTime;
         //timeCounterText.text = $"{Mathf.Floor(currentTimeSecond).ToString()} seconds";
