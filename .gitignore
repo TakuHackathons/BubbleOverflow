@@ -77,3 +77,6 @@ crashlytics-build.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/unity
 /.vsconfig
+
+Assets/StreamingAssets/.env
+Assets/StreamingAssets/firebase-service-account.json*
