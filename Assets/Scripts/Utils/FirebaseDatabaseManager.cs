@@ -1,5 +1,4 @@
 using Firebase.Database;
-using Firebase.Database.Query;
 using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Firestore;
 using System.Collections.Generic;
@@ -8,6 +7,8 @@ using UnityEngine;
 using System;
 using System.IO;
 using dotenv.net;
+using Grpc.Core;
+using Firebase.Database.Query;
 using dotenv.net.Utilities;
 
 public class TestRecord
@@ -33,18 +34,24 @@ public class FirebaseDatabaseManager : SingletonBehaviour<FirebaseDatabaseManage
         {
             AuthTokenAsyncFactory = () => LoginAsync()
         });
-        // var dino = await firebaseClient.Child("dinosaurs").PostAsync(new TestRecord());
+        var observable = firebaseClient.Child("dinosaurs").AsObservable<TestRecord>().Subscribe(d => Console.WriteLine(d.Key));
+
+        var dino = await firebaseClient.Child("dinosaurs").PostAsync(new TestRecord());
         /*
-FirestoreDb db = FirestoreDb.Create("bubbleoverflow-ea9b3");
-CollectionReference collection = db.Collection("users");
-DocumentReference document = await collection.AddAsync(new { Name = new { First = "Ada", Last = "Lovelace" }, Born = 1815 });
-DocumentSnapshot snapshot = await document.GetSnapshotAsync();
-Dictionary<string, object> data = snapshot.ToDictionary();
-foreach (var kv in data)
-{
-    Debug.Log(kv.Key);
-    Debug.Log(kv.Value.ToString());
-}
+        FirestoreDb db = new FirestoreDbBuilder
+        {
+            ProjectId = "bubbleoverflow-ea9b3",
+            Credential = GoogleCredential.FromFile(Path.Combine(Application.streamingAssetsPath, "firebase-service-account.json"))
+        }.Build();
+        CollectionReference collection = db.Collection("users");
+        DocumentReference document = await collection.AddAsync(new { Name = new { First = "Ada", Last = "Lovelace" }, Born = 1815 });
+        DocumentSnapshot snapshot = await document.GetSnapshotAsync();
+        Dictionary<string, object> data = snapshot.ToDictionary();
+        foreach (var kv in data)
+        {
+            Debug.Log(kv.Key);
+            Debug.Log(kv.Value.ToString());
+        }
         */
     }
 
