@@ -25,7 +25,7 @@ public class FieldController : SingletonBehaviour<FieldController>
 
     void Start()
     {
-
+        SoundController.Instance.PlayBGM(BGM.Game);
     }
 
     void Update()

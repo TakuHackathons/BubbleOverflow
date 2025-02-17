@@ -49,14 +49,11 @@ public class SoundController : MonoBehaviour
 
     private Dictionary<string, AudioClip> clipCache = new Dictionary<string, AudioClip>();
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Awake()
     {
         instance = this;
     }
 
- 
     public void PlayBGM(BGM bgm) {
         foreach (var info in bgmList) {
             if (info.key == bgm) {
