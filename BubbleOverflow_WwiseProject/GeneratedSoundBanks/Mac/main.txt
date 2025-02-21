@@ -1,0 +1,24 @@
+Event	ID	Name			Wwise Object Path	Notes
+	469263807	Bubble_Pop			\Default Work Unit\Bubble_Pop	
+	1881921610	Bubble_Throw			\Default Work Unit\Bubble_Throw	
+	3615530111	Bubble_Crush			\Default Work Unit\Bubble_Crush	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	3820615	bubble_pop2	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\FF\{FFF7314A-8A7A-3730-268A-CC6B7D2EA922}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_pop\bubble_pop2		62840
+	5611305	bubble_throw3	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\AD\{AD584B4B-A4ED-9F2D-6B0D-2B40DBA49809}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_throw\bubble_throw3		30960
+	17088374	bubble_pop1	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\A7\{A7194500-FE85-4C08-BA28-E735C3977A1A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_pop\bubble_pop1		57160
+	86572971	bubble_pop6	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\8B\{8B5C41D4-3C83-5679-DC74-758A9DA44311}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_pop\bubble_pop6		41656
+	98022121	bubble_crush_2	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\63\{63C11272-853A-D4A2-A9B0-913138B4F976}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_crush\bubble_crush_2		102888
+	285252819	bubble_throw5	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\92\{9220B544-F423-EA18-E585-8A1DCC3EC377}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_throw\bubble_throw5		64364
+	285973432	bubble_throw4	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\28\{2827E8F7-1946-F577-EB51-76D4F98E6F46}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_throw\bubble_throw4		61372
+	332623778	bubble_crush_4	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\E6\{E6E626C7-011F-17A1-9C15-2D75FC860174}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_crush\bubble_crush_4		116368
+	342040176	bubble_pop3	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\AA\{AAB8F556-02FC-E649-CBD2-FD524273ED9B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_pop\bubble_pop3		54408
+	405407117	bubble_pop4	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\B3\{B3CD42B1-E79B-AC56-205D-835524CD28D9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_pop\bubble_pop4		44360
+	463100278	bubble_throw1	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\CD\{CDA9F9C1-7F5B-A44B-116E-FF14834AEB25}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_throw\bubble_throw1		48096
+	485470892	bubble_pop5	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\80\{80833F0E-72F0-D22B-93C0-0CAF7E7520D5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_pop\bubble_pop5		74664
+	691505825	bubble_throw2	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\0D\{0D7C50ED-3B2F-9762-B65A-5FA82F32D822}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_throw\bubble_throw2		28068
+	717720431	bubble_crush_3	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\BF\{BFAD4CF5-DF27-DE05-F7A8-3A3E142218A5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_crush\bubble_crush_3		106584
+	816979299	bubble_crush_5	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\D7\{D792DDAA-CC85-5BBC-6DA9-3ADBA48A928B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_crush\bubble_crush_5		111312
+	975152572	bubble_crush_6	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\19\{19E05BDE-155C-E39C-5C28-319E2A5E9760}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_crush\bubble_crush_6		97000
+	1023671004	bubble_crush_1	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\8C\{8CC55376-EE42-00D3-F940-54FE12CED935}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_crush\bubble_crush_1		83968
+

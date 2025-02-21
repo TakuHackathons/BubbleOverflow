@@ -1,0 +1,391 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f333c9ee3534e7abc0e439a9c5cf9d, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Virtual Acoustics
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 94578ec46996a241b4627beacbfd7a50
+    ParentPath: Virtual Acoustics/Default Work Unit
+    guid: 94578ec46996a241b4627beacbfd7a50
+    GuidInternal: 
+    m_lastTime: -8584618060458082655
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Master-Mixer Hierarchy
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 3266f0721d2e4745a5353b21d2ecd04c
+    ParentPath: Master-Mixer Hierarchy/Default Work Unit
+    guid: 3266f0721d2e4745a5353b21d2ecd04c
+    GuidInternal: 
+    m_lastTime: -8584618060458464548
+    List:
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 3266f0721d2e4745a5353b21d2ecd04c
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus
+  BankWwu:
+  - PhysicalPath: SoundBanks/Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: SoundBanks
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 9cf69e53919cfe4282e24bda825773cb
+    ParentPath: SoundBanks/Default Work Unit
+    guid: 9cf69e53919cfe4282e24bda825773cb
+    GuidInternal: 
+    m_lastTime: -8584616571066786619
+    List:
+    - name: main
+      guid: 9df1613cea4e44449e7dedd241df76fa
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9cf69e53919cfe4282e24bda825773cb
+      - ElementName: main
+        ObjectType: 7
+        guid: 9df1613cea4e44449e7dedd241df76fa
+      Path: SoundBanks/Default Work Unit/main
+  EventWwu:
+  - PhysicalPath: Events/Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: fcb8f6b46e589a4d807e1cc28d679b80
+    ParentPath: Events/Default Work Unit
+    guid: fcb8f6b46e589a4d807e1cc28d679b80
+    GuidInternal: 
+    m_lastTime: -8584616530885348013
+    List:
+    - name: Bubble_Crush
+      guid: 9e137da2f2d3eb4595f2b69ae3c774eb
+      id: 3615530111
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fcb8f6b46e589a4d807e1cc28d679b80
+      - ElementName: Bubble_Crush
+        ObjectType: 3
+        guid: 9e137da2f2d3eb4595f2b69ae3c774eb
+      Path: Events/Default Work Unit/Bubble_Crush
+      maxAttenuation: 0
+      maxDuration: 0.6415932
+      minDuration: 0.41231573
+    - name: Bubble_Pickup
+      guid: f8a6a881ca65434392e32e7d2b4dc890
+      id: 3394282238
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fcb8f6b46e589a4d807e1cc28d679b80
+      - ElementName: Bubble_Pickup
+        ObjectType: 3
+        guid: f8a6a881ca65434392e32e7d2b4dc890
+      Path: Events/Default Work Unit/Bubble_Pickup
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Bubble_Pop
+      guid: c3e4942fb5ad4942ad82af22b171c3be
+      id: 469263807
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fcb8f6b46e589a4d807e1cc28d679b80
+      - ElementName: Bubble_Pop
+        ObjectType: 3
+        guid: c3e4942fb5ad4942ad82af22b171c3be
+      Path: Events/Default Work Unit/Bubble_Pop
+      maxAttenuation: 0
+      maxDuration: 0.411469
+      minDuration: 0.20430945
+    - name: Bubble_Throw
+      guid: c09c6a7c25f7aa4e80e533eac1dd1c71
+      id: 1881921610
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fcb8f6b46e589a4d807e1cc28d679b80
+      - ElementName: Bubble_Throw
+        ObjectType: 3
+        guid: c09c6a7c25f7aa4e80e533eac1dd1c71
+      Path: Events/Default Work Unit/Bubble_Throw
+      maxAttenuation: 0
+      maxDuration: 0.33472916
+      minDuration: 0.1456875
+    - name: Char_Lose
+      guid: 651617cc220e164d8a63114ac0263b2e
+      id: 3105514555
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fcb8f6b46e589a4d807e1cc28d679b80
+      - ElementName: Char_Lose
+        ObjectType: 3
+        guid: 651617cc220e164d8a63114ac0263b2e
+      Path: Events/Default Work Unit/Char_Lose
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Char_Pick
+      guid: e017d488555f014d8acc2b3756c3af55
+      id: 992231387
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fcb8f6b46e589a4d807e1cc28d679b80
+      - ElementName: Char_Pick
+        ObjectType: 3
+        guid: e017d488555f014d8acc2b3756c3af55
+      Path: Events/Default Work Unit/Char_Pick
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Char_Win
+      guid: e7e4fa7820b70b4cb8c047ff9e789ddc
+      id: 3073287618
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fcb8f6b46e589a4d807e1cc28d679b80
+      - ElementName: Char_Win
+        ObjectType: 3
+        guid: e7e4fa7820b70b4cb8c047ff9e789ddc
+      Path: Events/Default Work Unit/Char_Win
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  - PhysicalPath: Events/Music.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Music
+      ObjectType: 12
+      guid: 26c50ad61a8fb346bec214fda0ed36da
+    ParentPath: Events/Music
+    guid: 26c50ad61a8fb346bec214fda0ed36da
+    GuidInternal: 
+    m_lastTime: -8584616530885296869
+    List:
+    - name: Bubble_Fight
+      guid: 7b789590b6cd994bbca1f91336a646d2
+      id: 1948957912
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Music
+        ObjectType: 12
+        guid: 26c50ad61a8fb346bec214fda0ed36da
+      - ElementName: Bubble_Fight
+        ObjectType: 3
+        guid: 7b789590b6cd994bbca1f91336a646d2
+      Path: Events/Music/Bubble_Fight
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  RtpcWwu:
+  - PhysicalPath: Game Parameters/Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Game Parameters
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 8798444c2b48ac4c8773951e6c201f67
+    ParentPath: Game Parameters/Default Work Unit
+    guid: 8798444c2b48ac4c8773951e6c201f67
+    GuidInternal: 
+    m_lastTime: -8584618060458349553
+    List: []
+  StateWwu:
+  - PhysicalPath: States/Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: States
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: af613ffbff848d4eacbddbc62da13137
+    ParentPath: States/Default Work Unit
+    guid: af613ffbff848d4eacbddbc62da13137
+    GuidInternal: 
+    m_lastTime: -8584618060458389179
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches/Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Switches
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 6557e4a1ef22bb42b94d90690dc2156c
+    ParentPath: Switches/Default Work Unit
+    guid: 6557e4a1ef22bb42b94d90690dc2156c
+    GuidInternal: 
+    m_lastTime: -8584616548269053260
+    List:
+    - name: Character
+      guid: 12013b0a02790e4bb36c71a3f1073200
+      id: 436743010
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6557e4a1ef22bb42b94d90690dc2156c
+      - ElementName: Character
+        ObjectType: 11
+        guid: 12013b0a02790e4bb36c71a3f1073200
+      Path: Switches/Default Work Unit/Character
+      values:
+      - name: Bunny
+        guid: 968fddbe0a49df4dab0a70c00896cd5c
+        id: 3283622251
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 6557e4a1ef22bb42b94d90690dc2156c
+        - ElementName: Character
+          ObjectType: 11
+          guid: 12013b0a02790e4bb36c71a3f1073200
+        - ElementName: Bunny
+          ObjectType: 10
+          guid: 968fddbe0a49df4dab0a70c00896cd5c
+      - name: Cat
+        guid: e112877c82433e42a1c5269321883ad0
+        id: 983016379
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 6557e4a1ef22bb42b94d90690dc2156c
+        - ElementName: Character
+          ObjectType: 11
+          guid: 12013b0a02790e4bb36c71a3f1073200
+        - ElementName: Cat
+          ObjectType: 10
+          guid: e112877c82433e42a1c5269321883ad0
+      - name: Dog
+        guid: 27ab1bc19be3c34dad2414a496f596d2
+        id: 546651181
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 6557e4a1ef22bb42b94d90690dc2156c
+        - ElementName: Character
+          ObjectType: 11
+          guid: 12013b0a02790e4bb36c71a3f1073200
+        - ElementName: Dog
+          ObjectType: 10
+          guid: 27ab1bc19be3c34dad2414a496f596d2
+      - name: Horse
+        guid: ae98541ad4b3304da4e47127df1d6f3d
+        id: 3854847584
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 6557e4a1ef22bb42b94d90690dc2156c
+        - ElementName: Character
+          ObjectType: 11
+          guid: 12013b0a02790e4bb36c71a3f1073200
+        - ElementName: Horse
+          ObjectType: 10
+          guid: ae98541ad4b3304da4e47127df1d6f3d
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+  TriggerWwu:
+  - PhysicalPath: Triggers/Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Triggers
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 4eb76413fb55ad46ab150fa3bf2abeae
+    ParentPath: Triggers/Default Work Unit
+    guid: 4eb76413fb55ad46ab150fa3bf2abeae
+    GuidInternal: 
+    m_lastTime: -8584618060458235903
+    List: []
+  ExpandedFileSystemItemIds: 
+  ExpandedWaapiItemIds: 070000001100000012000000
+  AutoSyncSelection: 0
+  autoPopulateEnabled: 1
+  currentDataSource: 0
+  CurrentPluginConfig: 

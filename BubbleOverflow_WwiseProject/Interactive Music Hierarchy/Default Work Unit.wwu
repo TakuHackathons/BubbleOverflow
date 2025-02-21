@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8440870C-902B-4939-9FD8-6EA8F93DC50D}" SchemaVersion="123">
+	<InteractiveMusic>
+		<WorkUnit Name="Default Work Unit" ID="{8440870C-902B-4939-9FD8-6EA8F93DC50D}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="BubbleFight" ID="{0BA32CFB-21DC-45F5-A963-EE28D2DF43BD}" ShortID="518466168">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A17530E2-3D14-4D21-9506-AC431F6DEDE0}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{72F06632-2E1D-4547-A535-3B21D2ECD04C}"/>
+						</Reference>
+						<Reference Name="PlaylistRoot">
+							<Custom>
+								<MusicPlaylistItem Name="" ID="{478D80CE-7794-4F67-AD9A-3195E5520496}" ShortID="370334596">
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{00899137-9AF2-4E9E-B2E5-D865C56EC359}" ShortID="1069259106">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Segment">
+													<ObjectRef Name="BubbleOverflowIntro" ID="{932F9B70-63F4-4EFC-BB8B-13BC55DD3925}" WorkUnitID="{8440870C-902B-4939-9FD8-6EA8F93DC50D}"/>
+												</Reference>
+											</ReferenceList>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{DFA28E59-D939-4158-9D71-53B34550FD6B}" ShortID="979754209">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{46AC4F82-9B64-4A40-BBE5-8D1D03138C07}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Segment">
+													<ObjectRef Name="BubbleOverflowTheme" ID="{FB000E11-79AA-4BCB-A2AA-F43A71F9DF9C}" WorkUnitID="{8440870C-902B-4939-9FD8-6EA8F93DC50D}"/>
+												</Reference>
+											</ReferenceList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Custom>
+						</Reference>
+						<Reference Name="TransitionRoot">
+							<Custom>
+								<MusicTransition Name="Root" ID="{6C09F1E5-AE34-4636-B75C-07F5E4571C85}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{4AF4B39E-4E43-4BD9-8FC3-0736EB467FE5}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</Custom>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="BubbleOverflowIntro" ID="{932F9B70-63F4-4EFC-BB8B-13BC55DD3925}" ShortID="759401856">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A17530E2-3D14-4D21-9506-AC431F6DEDE0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{72F06632-2E1D-4547-A535-3B21D2ECD04C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="BubbleOverflowIntro" ID="{EB7882CC-580B-436E-B0F4-1D5916828152}" ShortID="125124722">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{72F06632-2E1D-4547-A535-3B21D2ECD04C}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{953936FD-0DE4-4ECC-8520-34A45418FABC}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="BubbleOverflowIntro" ID="{70030C52-7EA0-4B55-9E90-DF05CF6AFD16}">
+											<Language>SFX</Language>
+											<AudioFile>BubbleOverflowIntro.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="995827044"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{038904CC-C9B8-4836-A774-30F101283A41}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="BubbleOverflowIntro" ID="{AFC8B217-CB97-44D9-B64E-A1EAB9926426}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="4000"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="BubbleOverflowIntro" ID="{70030C52-7EA0-4B55-9E90-DF05CF6AFD16}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{D46E293D-0A47-4862-9917-8BB6144154A0}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{7484A807-82C4-49CD-9B52-4E45336F500A}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="4000"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+						<MusicSegment Name="BubbleOverflowTheme" ID="{FB000E11-79AA-4BCB-A2AA-F43A71F9DF9C}" ShortID="785684881">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="80000"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A17530E2-3D14-4D21-9506-AC431F6DEDE0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{72F06632-2E1D-4547-A535-3B21D2ECD04C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="BubbleOverflowTheme" ID="{DD6CFD61-9741-4848-96FE-C2A5CE4D0589}" ShortID="318316923">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{72F06632-2E1D-4547-A535-3B21D2ECD04C}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{E588AF77-AE84-490F-BBC6-7A7CDE4DB6FC}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="BubbleOverflowTheme" ID="{8FB6EB9F-E2BF-43C7-8E28-59AFF1637D03}">
+											<Language>SFX</Language>
+											<AudioFile>BubbleOverflowTheme.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="161120151"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{6B46752D-716E-4672-8672-0DAF5EF5C507}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="BubbleOverflowTheme" ID="{ACE8D93B-9CAB-46D3-838F-72EC8794C9EA}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="80000"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="BubbleOverflowTheme" ID="{8FB6EB9F-E2BF-43C7-8E28-59AFF1637D03}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{8D94B6C7-564C-4D02-8E03-121E911F421A}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{F197BA5B-8192-415D-A23A-BC0E0E6393A3}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="80000"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>
