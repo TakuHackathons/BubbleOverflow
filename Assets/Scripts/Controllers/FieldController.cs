@@ -4,18 +4,24 @@ using UnityEngine;
 public class FieldController : SingletonBehaviour<FieldController>
 {
     [SerializeField] private GameObject fieldGameObj;
-    //[SerializeField] private List<PlayerTerritory> playerTerritories;
+    [SerializeField] private List<PlayerTerritory> playerTerritories;
     [SerializeField] private List<PlayerRootNumberName> playerRootNumberNames;
 
     private void Awake()
     {
-        //Utils.InstantiateTo(this.gameObject, fieldGameObj);
-        //for(int i = 0;i < playerTerritories.Count;++i)
-        //{
-        //   Territory territory = playerTerritories[i].territory;
-        //   territory.SetPlayerNumberName(playerTerritories[i].PlayerNumberName);
-        //   territory.OnHitTerritory = HitTerritory;
-        //}
+        // ƒTƒEƒ“ƒh
+        SoundController.Instance.PlayBGM(BGM.Game);
+
+        // 
+        Utils.InstantiateTo(this.gameObject, fieldGameObj);
+        
+        for(int i = 0;i < playerTerritories.Count;++i)
+        {
+           Territory territory = playerTerritories[i].territory;
+           territory.SetPlayerNumberName(playerTerritories[i].PlayerNumberName);
+           territory.OnHitTerritory = HitTerritory;
+        }
+        
     }
 
     private void HitTerritory(PlayerNumberName pnn, GameObject hitObject)
@@ -25,7 +31,7 @@ public class FieldController : SingletonBehaviour<FieldController>
 
     void Start()
     {
-        SoundController.Instance.PlayBGM(BGM.Game);
+        
     }
 
     void Update()
