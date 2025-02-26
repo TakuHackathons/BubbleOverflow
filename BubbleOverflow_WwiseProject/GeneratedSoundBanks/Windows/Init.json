@@ -41,9 +41,43 @@
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
      }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "436743010",
+      "Name": "Character",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Character",
+      "GUID": "{0A3B0112-7902-4B0E-B36C-71A3F1073200}",
+      "Switches": [
+       {
+        "Id": "546651181",
+        "Name": "Dog",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Character\\Dog",
+        "GUID": "{C11BAB27-E39B-4DC3-AD24-14A496F596D2}"
+       },
+       {
+        "Id": "983016379",
+        "Name": "Cat",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Character\\Cat",
+        "GUID": "{7C8712E1-4382-423E-A1C5-269321883AD0}"
+       },
+       {
+        "Id": "3283622251",
+        "Name": "Bunny",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Character\\Bunny",
+        "GUID": "{BEDD8F96-490A-4DDF-AB0A-70C00896CD5C}"
+       },
+       {
+        "Id": "3854847584",
+        "Name": "Horse",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Character\\Horse",
+        "GUID": "{1A5498AE-B3D4-4D30-A4E4-7127DF1D6F3D}"
+       }
+      ]
+     }
     ]
    }
   ],
-  "FileHash": "{A79C8DBE-EBDD-63EE-EC20-48A56A42B06D}"
+  "FileHash": "{289BB280-1408-E1A2-F482-2722CE8B8BFE}"
  }
 }

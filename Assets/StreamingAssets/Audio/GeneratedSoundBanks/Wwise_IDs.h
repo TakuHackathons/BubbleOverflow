@@ -18,6 +18,23 @@ namespace AK
         static const AkUniqueID BUBBLE_THROW = 1881921610U;
     } // namespace EVENTS
 
+    namespace SWITCHES
+    {
+        namespace CHARACTER
+        {
+            static const AkUniqueID GROUP = 436743010U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID BUNNY = 3283622251U;
+                static const AkUniqueID CAT = 983016379U;
+                static const AkUniqueID DOG = 546651181U;
+                static const AkUniqueID HORSE = 3854847584U;
+            } // namespace SWITCH
+        } // namespace CHARACTER
+
+    } // namespace SWITCHES
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;

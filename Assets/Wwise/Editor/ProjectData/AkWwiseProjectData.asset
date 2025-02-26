@@ -162,8 +162,8 @@ MonoBehaviour:
         guid: c09c6a7c25f7aa4e80e533eac1dd1c71
       Path: Events/Default Work Unit/Bubble_Throw
       maxAttenuation: 0
-      maxDuration: 0.33472916
-      minDuration: 0.1456875
+      maxDuration: 0.64989585
+      minDuration: 0.3456875
     - name: Char_Lose
       guid: 651617cc220e164d8a63114ac0263b2e
       id: 3105514555
@@ -401,7 +401,7 @@ MonoBehaviour:
     m_lastTime: -8584618060458235903
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 1100000012000000
+  ExpandedWaapiItemIds: 0b000000110000001200000018000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

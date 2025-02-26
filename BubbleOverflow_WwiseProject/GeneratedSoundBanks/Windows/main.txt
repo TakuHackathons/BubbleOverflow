@@ -3,22 +3,55 @@ Event	ID	Name			Wwise Object Path	Notes
 	1881921610	Bubble_Throw			\Default Work Unit\Bubble_Throw	
 	3615530111	Bubble_Crush			\Default Work Unit\Bubble_Crush	
 
+Switch Group	ID	Name			Wwise Object Path	Notes
+	436743010	Character			\Default Work Unit\Character	
+
+Switch	ID	Name	Switch Group			Notes
+	546651181	Dog	Character			
+	983016379	Cat	Character			
+	3283622251	Bunny	Character			
+	3854847584	Horse	Character			
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	3820615	bubble_pop2	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\FF\{FFF7314A-8A7A-3730-268A-CC6B7D2EA922}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_pop\bubble_pop2		62840
 	5611305	bubble_throw3	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\AD\{AD584B4B-A4ED-9F2D-6B0D-2B40DBA49809}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_throw\bubble_throw3		30960
+	6267060	throw_cat3	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\E4\{E48E6C9C-F628-4DD2-CF2C-7536B94EF579}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_cat\throw_cat3		54928
 	17088374	bubble_pop1	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\A7\{A7194500-FE85-4C08-BA28-E735C3977A1A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_pop\bubble_pop1		57160
+	17145306	throw_cat2	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\20\{20DF3FDF-6649-F903-3F53-1B9212078DBA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_cat\throw_cat2		68988
+	21516477	throw_horse6	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\EA\{EA1B450A-FBBB-FABB-3099-B2D5FB463177}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_horse\throw_horse6		124876
+	24320654	throw_cat1	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\82\{82F20910-A1DD-67DA-0256-B275F4C4DFE2}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_cat\throw_cat1		35772
+	38519278	throw_horse3	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\86\{8621E21B-D33A-76BD-7511-6A67ED1874B5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_horse\throw_horse3		60556
+	57340912	throw_rabbit5	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\12\{126CF079-1651-5BF3-B4AD-82F8D378C229}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_rabbit\throw_rabbit5		51020
 	86572971	bubble_pop6	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\8B\{8B5C41D4-3C83-5679-DC74-758A9DA44311}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_pop\bubble_pop6		41656
 	98022121	bubble_crush_2	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\63\{63C11272-853A-D4A2-A9B0-913138B4F976}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_crush\bubble_crush_2		102888
+	109481343	throw_rabbit4	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\A3\{A336879C-8BD8-B4E3-4017-089DCC3136AD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_rabbit\throw_rabbit4		66180
+	180778555	throw_dog3	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\83\{838479F6-752A-86BD-5044-E7DDFF4D3E00}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_dog\throw_dog3		58444
 	285252819	bubble_throw5	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\92\{9220B544-F423-EA18-E585-8A1DCC3EC377}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_throw\bubble_throw5		64364
 	285973432	bubble_throw4	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\28\{2827E8F7-1946-F577-EB51-76D4F98E6F46}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_throw\bubble_throw4		61372
+	296498721	throw_horse4	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\80\{8019AB36-E14E-875A-3F4C-A5A49E90CC83}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_horse\throw_horse4		113628
 	332623778	bubble_crush_4	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\E6\{E6E626C7-011F-17A1-9C15-2D75FC860174}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_crush\bubble_crush_4		116368
 	342040176	bubble_pop3	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\AA\{AAB8F556-02FC-E649-CBD2-FD524273ED9B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_pop\bubble_pop3		54408
+	383385939	throw_rabbit2	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\46\{4686A135-80AD-2B74-0ECB-B1829DFF8043}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_rabbit\throw_rabbit2		83052
 	405407117	bubble_pop4	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\B3\{B3CD42B1-E79B-AC56-205D-835524CD28D9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_pop\bubble_pop4		44360
 	463100278	bubble_throw1	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\CD\{CDA9F9C1-7F5B-A44B-116E-FF14834AEB25}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_throw\bubble_throw1		48096
 	485470892	bubble_pop5	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\80\{80833F0E-72F0-D22B-93C0-0CAF7E7520D5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_pop\bubble_pop5		74664
+	489605308	throw_dog4	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\8F\{8FB21068-D45F-CA96-7576-739F7BF7D56C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_dog\throw_dog4		47900
+	507464652	throw_cat4	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\33\{33890277-8FF5-622B-C71B-2E6B4D8FBB93}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_cat\throw_cat4		65828
+	514000703	throw_dog6	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\5E\{5EAACAED-2824-B955-ED69-877152635E86}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_dog\throw_dog6		91484
+	515551510	throw_rabbit3	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\23\{23DD5A8D-D3C0-F334-2D2D-DDA3F1A71C6D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_rabbit\throw_rabbit3		62660
+	566955224	throw_dog5	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\32\{32DC4E6F-F8A3-883B-1D6D-1BDFBF2B5E9E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_dog\throw_dog5		59848
+	630063958	throw_dog1	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\17\{17582B69-6D0F-8A27-0BC3-3D7D60C22AD3}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_dog\throw_dog1		69964
+	653828806	throw_horse5	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\79\{79792F32-3AF3-5B1E-BAAC-2DE5E9C6CAAD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_horse\throw_horse5		119956
+	661316714	throw_horse2	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\3F\{3F616538-7194-B787-2428-7D5D69B2E561}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_horse\throw_horse2		70044
 	691505825	bubble_throw2	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\0D\{0D7C50ED-3B2F-9762-B65A-5FA82F32D822}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_throw\bubble_throw2		28068
+	699402815	throw_horse1	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\D0\{D0C7FA7F-15D3-567F-D865-D9F113CD601A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_horse\throw_horse1		49300
 	717720431	bubble_crush_3	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\BF\{BFAD4CF5-DF27-DE05-F7A8-3A3E142218A5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_crush\bubble_crush_3		106584
+	767513090	throw_rabbit1	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\ED\{ED5F438B-4718-D7A3-B897-7B44386FECF0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_rabbit\throw_rabbit1		87268
 	816979299	bubble_crush_5	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\D7\{D792DDAA-CC85-5BBC-6DA9-3ADBA48A928B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_crush\bubble_crush_5		111312
+	824831946	throw_dog2	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\33\{33EA7929-3D2E-FF0C-6C92-AE4B1295C84E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_dog\throw_dog2		73912
+	834619364	throw_rabbit6	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\7B\{7B73DF36-4D07-2782-A3C5-228A25FC0729}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_rabbit\throw_rabbit6		67808
+	838523309	throw_cat6	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\17\{17CDD60B-6DFC-7940-523B-DE33A2DF5FA5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_cat\throw_cat6		37708
+	966321467	throw_cat5	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\C2\{C2566FBD-C04C-9D3B-D887-0DB14E0B928D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Throw\throw_cat\throw_cat5		60196
 	975152572	bubble_crush_6	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\19\{19E05BDE-155C-E39C-5C28-319E2A5E9760}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_crush\bubble_crush_6		97000
 	1023671004	bubble_crush_1	Y:\Documents\GitHub\BubbleOverflow\BubbleOverflow_WwiseProject\.cache\8C\{8CC55376-EE42-00D3-F940-54FE12CED935}.wem		\Actor-Mixer Hierarchy\Default Work Unit\bubble_crush\bubble_crush_1		83968
 
