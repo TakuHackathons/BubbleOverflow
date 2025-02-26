@@ -234,6 +234,138 @@
 						</MusicSegment>
 					</ChildrenList>
 				</MusicPlaylistContainer>
+				<MusicPlaylistContainer Name="BubbleWait" ID="{B6B79CED-3380-48F5-A982-99BB006EBA9C}" ShortID="740261380">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A17530E2-3D14-4D21-9506-AC431F6DEDE0}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{72F06632-2E1D-4547-A535-3B21D2ECD04C}"/>
+						</Reference>
+						<Reference Name="PlaylistRoot">
+							<Custom>
+								<MusicPlaylistItem Name="" ID="{B9BBAA63-9BBA-4B47-A447-F21CF6DA20EC}" ShortID="805111834">
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{29A1C8C1-0219-4BC7-8AC3-39E3AFB71FC5}" ShortID="288317992">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Segment">
+													<ObjectRef Name="Bubble Wait" ID="{D390C333-EB99-495E-AB6A-94F34207F623}" WorkUnitID="{8440870C-902B-4939-9FD8-6EA8F93DC50D}"/>
+												</Reference>
+											</ReferenceList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Custom>
+						</Reference>
+						<Reference Name="TransitionRoot">
+							<Custom>
+								<MusicTransition Name="Root" ID="{33858C67-5D86-4694-A0B8-B172361BF3BB}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{5B08C14F-E410-40DA-BAC2-6CD5F8CDAAD8}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</Custom>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="Bubble Wait" ID="{D390C333-EB99-495E-AB6A-94F34207F623}" ShortID="841859851">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="64000"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A17530E2-3D14-4D21-9506-AC431F6DEDE0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{72F06632-2E1D-4547-A535-3B21D2ECD04C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="Bubble Wait" ID="{C0111EA7-AF02-414C-892B-D917CD5E03F5}" ShortID="530291093">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{72F06632-2E1D-4547-A535-3B21D2ECD04C}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{7E14D053-60A9-47BC-8CE2-1A414C349B46}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Bubble Wait" ID="{95789B66-6DED-4FAA-94C6-52D4A0CF5BA9}">
+											<Language>SFX</Language>
+											<AudioFile>Bubble Wait.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="854155235"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{FBD4C4E1-309C-42AF-AB86-003E988723F3}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="Bubble Wait" ID="{FEAED9AC-29BB-42AB-9F22-2CA2A1E26CAC}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="64000"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="Bubble Wait" ID="{95789B66-6DED-4FAA-94C6-52D4A0CF5BA9}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{B2ECA532-2A8B-4163-AF7F-CBA437E77246}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{F4EA7E9B-596B-42DD-B3BD-4FEFE2B56B20}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="64000"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+				</MusicPlaylistContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</InteractiveMusic>

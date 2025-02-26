@@ -226,7 +226,7 @@ MonoBehaviour:
     ParentPath: Events/Music
     guid: 26c50ad61a8fb346bec214fda0ed36da
     GuidInternal: 
-    m_lastTime: -8584616530885296869
+    m_lastTime: -8584610407384465634
     List:
     - name: Bubble_Fight
       guid: 7b789590b6cd994bbca1f91336a646d2
@@ -242,6 +242,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: 7b789590b6cd994bbca1f91336a646d2
       Path: Events/Music/Bubble_Fight
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Bubble_Wait
+      guid: 75e0b7bae3b9f04b844645fddf8666ac
+      id: 2364659217
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Music
+        ObjectType: 12
+        guid: 26c50ad61a8fb346bec214fda0ed36da
+      - ElementName: Bubble_Wait
+        ObjectType: 3
+        guid: 75e0b7bae3b9f04b844645fddf8666ac
+      Path: Events/Music/Bubble_Wait
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -384,7 +401,7 @@ MonoBehaviour:
     m_lastTime: -8584618060458235903
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 070000001100000012000000
+  ExpandedWaapiItemIds: 1100000012000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
