@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: fcb8f6b46e589a4d807e1cc28d679b80
     GuidInternal: 
-    m_lastTime: -8584616530885348013
+    m_lastTime: -8584610273254831477
     List:
     - name: Bubble_Crush
       guid: 9e137da2f2d3eb4595f2b69ae3c774eb
@@ -212,6 +212,74 @@ MonoBehaviour:
         ObjectType: 3
         guid: e7e4fa7820b70b4cb8c047ff9e789ddc
       Path: Events/Default Work Unit/Char_Win
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Menu_Down
+      guid: 669c30294b4b3c449000de8e6569abc2
+      id: 1159917375
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fcb8f6b46e589a4d807e1cc28d679b80
+      - ElementName: Menu_Down
+        ObjectType: 3
+        guid: 669c30294b4b3c449000de8e6569abc2
+      Path: Events/Default Work Unit/Menu_Down
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Menu_Select
+      guid: 2757d7a849869844ba12e11c45478b19
+      id: 4203375351
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fcb8f6b46e589a4d807e1cc28d679b80
+      - ElementName: Menu_Select
+        ObjectType: 3
+        guid: 2757d7a849869844ba12e11c45478b19
+      Path: Events/Default Work Unit/Menu_Select
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Menu_Unselect
+      guid: bfa02fd832101941ac6fe79be5f16582
+      id: 3069903614
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fcb8f6b46e589a4d807e1cc28d679b80
+      - ElementName: Menu_Unselect
+        ObjectType: 3
+        guid: bfa02fd832101941ac6fe79be5f16582
+      Path: Events/Default Work Unit/Menu_Unselect
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Menu_Up
+      guid: c539db1e6244db4aa32003e491bb5827
+      id: 20270792
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fcb8f6b46e589a4d807e1cc28d679b80
+      - ElementName: Menu_Up
+        ObjectType: 3
+        guid: c539db1e6244db4aa32003e491bb5827
+      Path: Events/Default Work Unit/Menu_Up
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -400,9 +468,9 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584618060458235903
     List: []
-  ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 060000000b0000000f000000110000001200000018000000
+  ExpandedFileSystemItemIds: 02000000060000000f000000110000001200000018000000
+  ExpandedWaapiItemIds: 02000000060000000f000000110000001200000018000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 0
+  currentDataSource: 1
   CurrentPluginConfig: 
