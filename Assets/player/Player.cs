@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(state_);
         UpdateNearestBubble();
         UpdateButton();
         TransitionState();
@@ -108,6 +109,13 @@ public class Player : MonoBehaviour
                 break;
 
             case State.Hold:
+                // バブルが存在する時のみ、PutDownを行う
+                if (!holding_bubble_ || !holding_bubble_.IsAlive())
+                {
+                    anime_.PlayPutDown();
+                    ChangeState(State.Idle);
+                    break;
+                }
                 if (!button_pressed_)
                 {
                     if (input_direction_.sqrMagnitude > 0.1f)
@@ -118,10 +126,6 @@ public class Player : MonoBehaviour
                     {
                         ChangeState(State.PutDown);
                     }
-                }
-                if (!holding_bubble_ || !holding_bubble_.IsAlive())
-                {
-                    ChangeState(State.Idle);
                 }
                 break;
 
