@@ -9,9 +9,6 @@ public class FieldController : SingletonBehaviour<FieldController>
 
     private void Awake()
     {
-        // サウンド
-        SoundController.Instance.PlayBGM(BGM.Game);
-
         // 
         Utils.InstantiateTo(this.gameObject, fieldGameObj);
         
@@ -31,12 +28,12 @@ public class FieldController : SingletonBehaviour<FieldController>
 
     void Start()
     {
-        
+        // サウンド
+        SoundController.Instance.PlayBGM(BGM.Game);
     }
 
     void Update()
     {
-
     }
 
     public void SpawnPlayers(List<PlayerData> spawnPlayerDataList)

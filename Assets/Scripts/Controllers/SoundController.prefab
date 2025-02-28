@@ -70,6 +70,50 @@ MonoBehaviour:
     value: {fileID: 8300000, guid: 7b2032a05529e444d8932d2710f1b6eb, type: 3}
   - key: 6
     value: {fileID: 8300000, guid: d35817a452180f943b8bd6a2ed9aba4d, type: 3}
+  dogVoiceList:
+  - key: 0
+    value: {fileID: 8300000, guid: d1df2ab99b2a90d4fb94dccc6691c8ec, type: 3}
+  - key: 1
+    value: {fileID: 8300000, guid: 54fb3ae6ca46018419c8ce7dfe8d8f95, type: 3}
+  - key: 2
+    value: {fileID: 8300000, guid: 76ab4cff77dd3194ab2ecd67441d4074, type: 3}
+  - key: 3
+    value: {fileID: 8300000, guid: ebeb9060a271f1141a019df1ac138a32, type: 3}
+  - key: 4
+    value: {fileID: 8300000, guid: 2aeab4c8e9203d04a8768171413583ad, type: 3}
+  catVoiceList:
+  - key: 0
+    value: {fileID: 8300000, guid: 3a65bcdacf6550c4fadf164fb073a67c, type: 3}
+  - key: 1
+    value: {fileID: 8300000, guid: 5e66417293205a7479df95364cedf933, type: 3}
+  - key: 2
+    value: {fileID: 8300000, guid: baf8cb5ccea6a9349bf7d346640afb16, type: 3}
+  - key: 3
+    value: {fileID: 8300000, guid: acace8c1b96aeb342894dc8fa32330c7, type: 3}
+  - key: 4
+    value: {fileID: 8300000, guid: cf8f6ae15a492244782bfafc7b501b4d, type: 3}
+  rabbitVoiceList:
+  - key: 0
+    value: {fileID: 8300000, guid: 65df1a2d5dcf1774080dcde10d1b2c92, type: 3}
+  - key: 1
+    value: {fileID: 8300000, guid: 13ff3eee95e932c47bb1a18bc1ab8e1d, type: 3}
+  - key: 2
+    value: {fileID: 8300000, guid: 13ff3eee95e932c47bb1a18bc1ab8e1d, type: 3}
+  - key: 3
+    value: {fileID: 8300000, guid: c618802380756fe42b5b0d3cb838ff74, type: 3}
+  - key: 4
+    value: {fileID: 8300000, guid: c03685adec386f44f8b15950b998c7c2, type: 3}
+  horseVoiceList:
+  - key: 0
+    value: {fileID: 8300000, guid: f33584592d58a0545bc2ea387dac71e4, type: 3}
+  - key: 1
+    value: {fileID: 8300000, guid: 10a359aef4d239b4e9c48e16324e825c, type: 3}
+  - key: 2
+    value: {fileID: 8300000, guid: 1f6adc5fd21973a4daf269098fbd135f, type: 3}
+  - key: 3
+    value: {fileID: 8300000, guid: f55648f8f1b15144c8c66a0b5b53f18c, type: 3}
+  - key: 4
+    value: {fileID: 8300000, guid: 691613688ebe8884b88557ac02ab5aad, type: 3}
 --- !u!1 &2036133091462660184
 GameObject:
   m_ObjectHideFlags: 0

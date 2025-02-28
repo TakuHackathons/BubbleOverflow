@@ -167,6 +167,7 @@ public class Player : MonoBehaviour
                 holding_bubble_ = nearest_bubble_;
                 holding_bubble_.Pickup(this);
                 anime_.PlayPickup();
+                SoundController.Instance.PlayVoice(gamepad_index, Voice.PickUp);
                 stop_timer_ = 0.7f;
                 break;
 
@@ -189,6 +190,7 @@ public class Player : MonoBehaviour
                 holding_bubble_.Throw(this.transform.position, throw_dir);
                 holding_bubble_ = null;
                 anime_.PlayThrow();
+                SoundController.Instance.PlayVoice(gamepad_index, Voice.Throw);
                 stop_timer_ = 0.5f;
                 break;
 
