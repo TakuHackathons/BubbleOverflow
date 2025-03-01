@@ -118,22 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bef0ff6656a99e4eb9d1830b2a92dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BubbleThrowEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 557a0ce3e8f8448ed906737569699b55, type: 2}
-  BubbleCrushEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: be04683e15d434282a52bb9d2553880c, type: 2}
-  BubblePickupEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: f779810d9b8ef438994f7734eb8780a3, type: 2}
-  BubblePopEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: dc2547c90c39a4cf3a1812d89c66b368, type: 2}
   velocity_: {x: 0, y: 0, z: 0}
   bubble_factory: {fileID: 2063832725765154989, guid: bab0c601795edb343b42275b5f6ba616, type: 3}
   hold_offset: 10

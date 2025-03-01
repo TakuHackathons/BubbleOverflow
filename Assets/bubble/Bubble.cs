@@ -30,11 +30,6 @@ public class Bubble : MonoBehaviour
         return !is_dead_;
     }
 
-    public AK.Wwise.Event BubbleThrowEvent;
-    public AK.Wwise.Event BubbleCrushEvent;
-    public AK.Wwise.Event BubblePickupEvent;
-    public AK.Wwise.Event BubblePopEvent;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -48,7 +43,7 @@ public class Bubble : MonoBehaviour
     {
         UpdateVelocity();
 
-        // ï¿½Ê’uï¿½Xï¿½V
+        // ˆÊ’uXV
         switch (state_)
         {
             case State.Free:
@@ -68,7 +63,7 @@ public class Bubble : MonoBehaviour
 
     void UpdateVelocity()
     {
-        // ï¿½ï¿½ï¿½xï¿½ÏX
+        // ‘¬“x•ÏX
         const float rate = 1.0f - kFrictionVel;
         velocity_ *= rate;
     }
@@ -140,7 +135,7 @@ public class Bubble : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider collider)
-    { // ï¿½ÚGï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    { // ÚG‚µ‚½’¼Œã
         if (is_dead_) return;
 
         if (collider.gameObject.CompareTag("Bubble"))
@@ -168,12 +163,11 @@ public class Bubble : MonoBehaviour
         }
         if (collider.gameObject.CompareTag("Chara"))
         {
-            // TODO: ï¿½Ğ‚ï¿½ï¿½
-            BubbleCrushEvent.Post(gameObject);
+            // TODO: ‚Ğ‚é‚İ
         }
         if (collider.gameObject.CompareTag("Ship"))
         {
-            // TODO: ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½
+            // TODO: “¾“_ˆ—
             var ship = collider.gameObject.GetComponent<Ship>();
             ship.AddScore(GetScoreByRank());
             Destroy(this.gameObject);
