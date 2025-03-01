@@ -16,17 +16,20 @@ public class TitleUIController : MonoBehaviour
 
     public void OnClickStartButton()
     {
+        SoundController.Instance.PlaySE(SE.Ok);
         SceneManager.LoadScene(gameSceneName);
     }
 
     public void OnClickCreditButton()
     {
+        SoundController.Instance.PlaySE(SE.Ok);
         titleUiField.gameObject.SetActive(false);
         creditUiField.gameObject.SetActive(true);
     }
 
     public void OnClickCreditBackButton()
     {
+        SoundController.Instance.PlaySE(SE.Cancel);
         titleUiField.gameObject.SetActive(true);
         creditUiField.gameObject.SetActive(false);
     }
