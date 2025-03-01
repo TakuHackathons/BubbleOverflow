@@ -8,6 +8,11 @@ public class GameController : SingletonBehaviour<GameController>
     public int Score { get; private set; }
     public PlayerData myPlayer { get; private set; }
 
+    [SerializeField] GameUICanvas uiCanvas;
+    [SerializeField] float timeupSecond = 60f;
+    
+    private float currentTimeSecond = 0f;
+
     void Start()
     {
         this.Score = 0;
@@ -16,6 +21,11 @@ public class GameController : SingletonBehaviour<GameController>
 
     void Update()
     {
+        currentTimeSecond += Time.deltaTime;
+        if (currentTimeSecond >= timeupSecond)
+        {
+            uiCanvas.ShowResultWindow();
+        }
     }
 
     public void AddScore(int score)

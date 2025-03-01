@@ -3,18 +3,16 @@ using UnityEngine;
 
 public class GameUICanvas : MonoBehaviour
 {
-    //[SerializeField] private TextMeshProUGUI timeCounterText;
-    //[SerializeField] private TextMeshProUGUI scoreText;
-
     [SerializeField] private TextMeshProUGUI text_dog;
     [SerializeField] private TextMeshProUGUI text_cat;
     [SerializeField] private TextMeshProUGUI text_bunny;
     [SerializeField] private TextMeshProUGUI text_horse;
+    [SerializeField] private ResultWindow resultWindow;
 
     private float currentTimeSecond = 0f;
     void Start()
     {
-
+        resultWindow.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,9 +23,11 @@ public class GameUICanvas : MonoBehaviour
         text_cat.text = $"{fieldControlerInstance.CatScore}";
         text_bunny.text = $"{fieldControlerInstance.BunnyScore}";
         text_horse.text = $"{fieldControlerInstance.HorseScore}";
+    }
 
-        //currentTimeSecond += Time.deltaTime;
-        //timeCounterText.text = $"{Mathf.Floor(currentTimeSecond).ToString()} seconds";
-        //scoreText.text = $"score: {GameController.Instance.Score.ToString()}";
+    public void ShowResultWindow()
+    {
+        resultWindow.gameObject.SetActive(true);
+        resultWindow.ShowWinner();
     }
 }

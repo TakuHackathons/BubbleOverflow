@@ -20,6 +20,14 @@ public class PlayerRoot : MonoBehaviour
 
     }
 
+    public string PlayerName
+    {
+        get
+        {
+            return playerNameText.text;
+        }
+    }
+
     void Start()
     {
         

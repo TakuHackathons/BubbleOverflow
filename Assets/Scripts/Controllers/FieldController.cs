@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class FieldController : SingletonBehaviour<FieldController>
@@ -43,6 +45,15 @@ public class FieldController : SingletonBehaviour<FieldController>
         {
             return ship_horse.GetScore();
         }
+    }
+
+    public PlayerRoot GetWinnerPlayerRoot()
+    {
+        List<Ship> ships = new List<Ship> { ship_dog, ship_cat, ship_bunny, ship_horse };
+        Ship winnerShip = ships.OrderBy((ship) => ship.GetScore()).LastOrDefault();
+        Territory winnerTerritory = winnerShip.GetComponent<Territory>();
+        PlayerRootNumberName playerRootNumberName = playerRootNumberNames.Find((playerRootNumberName) => playerRootNumberName.playerNumberName == winnerTerritory.PlayerNumberName);
+        return playerRootNumberName.playerRoot;
     }
 
     private void Awake()

@@ -808,11 +808,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 1
---- !u!1 &1727012537 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4225942527335581548, guid: 8dba5badc938040de8a8a78045c53605, type: 3}
-  m_PrefabInstance: {fileID: 2582626059883359321}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &214210421843957559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1106,6 +1101,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -350
       objectReference: {fileID: 0}
+    - target: {fileID: 5286956930287454981, guid: e38a2afb433466f4098eae4309b47252, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318370357808310224, guid: e38a2afb433466f4098eae4309b47252, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -42.94
+      objectReference: {fileID: 0}
     - target: {fileID: 7013173783206175354, guid: e38a2afb433466f4098eae4309b47252, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1139,10 +1142,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 717964442392594529, guid: 8dba5badc938040de8a8a78045c53605, type: 3}
-      propertyPath: playerObj
-      value: 
-      objectReference: {fileID: 1354324238}
     - target: {fileID: 868464395217579332, guid: 8dba5badc938040de8a8a78045c53605, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25
@@ -1215,10 +1214,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FieldPlane
       objectReference: {fileID: 0}
-    - target: {fileID: 5055917182044810915, guid: 8dba5badc938040de8a8a78045c53605, type: 3}
-      propertyPath: playerObj
-      value: 
-      objectReference: {fileID: 294367834}
     - target: {fileID: 5654704449877131134, guid: 8dba5badc938040de8a8a78045c53605, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25
@@ -1235,10 +1230,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ships
       objectReference: {fileID: 0}
-    - target: {fileID: 6877818970314869832, guid: 8dba5badc938040de8a8a78045c53605, type: 3}
-      propertyPath: playerObj
-      value: 
-      objectReference: {fileID: 758846134}
     - target: {fileID: 8099624998045431103, guid: 8dba5badc938040de8a8a78045c53605, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25
@@ -1263,10 +1254,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9083325927088390564, guid: 8dba5badc938040de8a8a78045c53605, type: 3}
-      propertyPath: playerObj
-      value: 
-      objectReference: {fileID: 1727012537}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

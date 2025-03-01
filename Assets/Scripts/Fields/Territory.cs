@@ -4,11 +4,11 @@ using System;
 public class Territory : MonoBehaviour
 {
     [SerializeField] SpriteRenderer spriteRenderer;
-    private PlayerNumberName playerNumberName;
+    public PlayerNumberName PlayerNumberName { private set; get; }
     public Action<PlayerNumberName, GameObject> OnHitTerritory { set; private get; } = null;
 
     public void SetPlayerNumberName(PlayerNumberName pnn) {
-        this.playerNumberName = pnn;
+        this.PlayerNumberName = pnn;
     }
 
     void Start()
@@ -31,7 +31,7 @@ public class Territory : MonoBehaviour
     {
         if (OnHitTerritory != null)
         {
-            OnHitTerritory(this.playerNumberName, collision.gameObject);
+            OnHitTerritory(this.PlayerNumberName, collision.gameObject);
         }
     }
 }
