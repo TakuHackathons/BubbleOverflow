@@ -1,16 +1,30 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TitleUIController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private GameObject titleUiField;
+    [SerializeField] private GameObject creditUiField;
+
     void Start()
     {
-        
+        titleUiField.gameObject.SetActive(true);
+        creditUiField.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnClickStartButton()
     {
-        
+    }
+
+    public void OnClickCreditButton()
+    {
+        titleUiField.gameObject.SetActive(false);
+        creditUiField.gameObject.SetActive(true);
+    }
+
+    public void OnClickCreditBackButton()
+    {
+        titleUiField.gameObject.SetActive(true);
+        creditUiField.gameObject.SetActive(false);
     }
 }
