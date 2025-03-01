@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B4F6B8FC-586E-4D9A-807E-1CC28D679B80}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{B4F6B8FC-586E-4D9A-807E-1CC28D679B80}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Bubble_Crush" ID="{A27D139E-D3F2-45EB-95F2-B69AE3C774EB}">
+					<ChildrenList>
+						<Action Name="" ID="{0D27858A-893E-4F50-BFA0-E9B9B2BC3B50}" ShortID="718375371">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="bubble_crush" ID="{0678C853-75C2-4B56-B079-7FD35B6AD1B6}" WorkUnitID="{E8B89A76-A952-4E07-B03A-A383B7BBE944}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Bubble_Pop" ID="{2F94E4C3-ADB5-4249-AD82-AF22B171C3BE}">
+					<ChildrenList>
+						<Action Name="" ID="{455F11E2-17E8-40BC-BCA7-221FDB4DC2E8}" ShortID="496690760">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="bubble_pop" ID="{52984FB6-DA35-47BF-BF60-F3D6C982E299}" WorkUnitID="{E8B89A76-A952-4E07-B03A-A383B7BBE944}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Bubble_Throw" ID="{7C6A9CC0-F725-4EAA-80E5-33EAC1DD1C71}">
+					<ChildrenList>
+						<Action Name="" ID="{8842A504-49D6-4548-B04E-BAA67811CF5E}" ShortID="565156996">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="bubble_throw" ID="{8877609F-45D9-4163-9ACC-D0A9D9F92734}" WorkUnitID="{E8B89A76-A952-4E07-B03A-A383B7BBE944}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8BCF2917-686A-4D81-8E06-09B31B711377}" ShortID="731050905">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Throw" ID="{23E71682-6355-4C91-9268-A29AF7BEF3E0}" WorkUnitID="{E8B89A76-A952-4E07-B03A-A383B7BBE944}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Bubble_Pickup" ID="{81A8A6F8-65CA-4343-92E3-2E7D2B4DC890}">
+					<ChildrenList>
+						<Action Name="" ID="{D5FFE9B8-D54D-42A9-95EA-EF0B93B04B6C}" ShortID="600994856">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pickup" ID="{3E643B09-09D2-44BF-8EB1-B50216C9EF8C}" WorkUnitID="{E8B89A76-A952-4E07-B03A-A383B7BBE944}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Char_Pick" ID="{88D417E0-5F55-4D01-8ACC-2B3756C3AF55}">
+					<ChildrenList>
+						<Action Name="" ID="{B4FD967C-3DB9-4F0B-B592-106C124B1C48}" ShortID="1069830007">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Character_Pick" ID="{302D3E85-57ED-4AED-A1C8-EFE43035522E}" WorkUnitID="{E8B89A76-A952-4E07-B03A-A383B7BBE944}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Char_Win" ID="{78FAE4E7-B720-4C0B-B8C0-47FF9E789DDC}">
+					<ChildrenList>
+						<Action Name="" ID="{C40864BA-D9C2-45E3-993D-2084DFFCD474}" ShortID="1002953068">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Win" ID="{19643F57-D4F7-4352-9B6B-5345BDE5B123}" WorkUnitID="{E8B89A76-A952-4E07-B03A-A383B7BBE944}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Char_Lose" ID="{CC171665-0E22-4D16-8A63-114AC0263B2E}">
+					<ChildrenList>
+						<Action Name="" ID="{C74B7E87-FB07-4A6E-A302-B881327A75C2}" ShortID="270298389">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Lose" ID="{5C6CADEE-EF9F-4EF1-8DC1-C50DC008B09B}" WorkUnitID="{E8B89A76-A952-4E07-B03A-A383B7BBE944}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Menu_Select" ID="{A8D75727-8649-4498-BA12-E11C45478B19}">
+					<ChildrenList>
+						<Action Name="" ID="{5137FA02-918F-40E5-B983-3669F11C9C53}" ShortID="979089462">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="menu_select" ID="{080BC7C2-6CC9-4F32-93AE-E4482B344FBE}" WorkUnitID="{E8B89A76-A952-4E07-B03A-A383B7BBE944}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Menu_Up" ID="{1EDB39C5-4462-4ADB-A320-03E491BB5827}">
+					<ChildrenList>
+						<Action Name="" ID="{666E1EAD-9C7D-4ED5-A06F-C77BE89BF9DF}" ShortID="664973955">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="menu_up" ID="{1DFED97F-8EF1-4433-93BD-340798253175}" WorkUnitID="{E8B89A76-A952-4E07-B03A-A383B7BBE944}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Menu_Down" ID="{29309C66-4B4B-443C-9000-DE8E6569ABC2}">
+					<ChildrenList>
+						<Action Name="" ID="{A8B3EF48-A6DA-45A9-A168-6965B20ACE80}" ShortID="575942342">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="menu_down" ID="{8ECA64A1-0628-489E-861F-1CAE8E925BB5}" WorkUnitID="{E8B89A76-A952-4E07-B03A-A383B7BBE944}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Menu_Unselect" ID="{D82FA0BF-1032-4119-AC6F-E79BE5F16582}">
+					<ChildrenList>
+						<Action Name="" ID="{66E068D0-2F4F-426C-AA87-B3FB66132FAD}" ShortID="193723232">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="menu_unselect" ID="{D1D6E061-FBF4-4626-BEB7-8EC7125D4A46}" WorkUnitID="{E8B89A76-A952-4E07-B03A-A383B7BBE944}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

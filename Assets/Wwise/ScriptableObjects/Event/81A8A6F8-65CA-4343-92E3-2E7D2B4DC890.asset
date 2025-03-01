@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36dbb2165eee14cc28d813ef56696269, type: 3}
+  m_Name: 81A8A6F8-65CA-4343-92E3-2E7D2B4DC890
+  m_EditorClassIdentifier: 
+  objectName: Bubble_Pickup
+  id: 3394282238
+  guid: 81A8A6F8-65CA-4343-92E3-2E7D2B4DC890
+  IsInUserDefinedSoundBank: 1
+  IsAutoBankLoaded: 0

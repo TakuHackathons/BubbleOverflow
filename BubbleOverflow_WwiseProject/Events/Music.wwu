@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{D60AC526-8F1A-46B3-BEC2-14FDA0ED36DA}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="Music" ID="{D60AC526-8F1A-46B3-BEC2-14FDA0ED36DA}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Bubble_Fight" ID="{9095787B-CDB6-4B99-BCA1-F91336A646D2}">
+					<ChildrenList>
+						<Action Name="" ID="{DF2D36DD-B740-4553-8FC6-0F56305BD81C}" ShortID="531780524">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BubbleFight" ID="{0BA32CFB-21DC-45F5-A963-EE28D2DF43BD}" WorkUnitID="{8440870C-902B-4939-9FD8-6EA8F93DC50D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{947F363C-ED87-4687-97A3-E2AC933BBD63}" ShortID="1037545415">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BubbleWait" ID="{B6B79CED-3380-48F5-A982-99BB006EBA9C}" WorkUnitID="{8440870C-902B-4939-9FD8-6EA8F93DC50D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{278DA6EB-6C51-4D7C-8E08-C970CCF9A1CD}" ShortID="252675657">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BubbleFight" ID="{0BA32CFB-21DC-45F5-A963-EE28D2DF43BD}" WorkUnitID="{8440870C-902B-4939-9FD8-6EA8F93DC50D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Bubble_Wait" ID="{BAB7E075-B9E3-4BF0-8446-45FDDF8666AC}">
+					<ChildrenList>
+						<Action Name="" ID="{4CF8475C-B9E2-4EF2-A492-B67EA12AE640}" ShortID="122454910">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BubbleWait" ID="{B6B79CED-3380-48F5-A982-99BB006EBA9C}" WorkUnitID="{8440870C-902B-4939-9FD8-6EA8F93DC50D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{0E92FCCF-3CDC-4EC5-A03C-8F8E25E8FD14}" ShortID="474879751">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BubbleFight" ID="{0BA32CFB-21DC-45F5-A963-EE28D2DF43BD}" WorkUnitID="{8440870C-902B-4939-9FD8-6EA8F93DC50D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{DB9AC0B9-C39B-4CFE-AEE9-A98E32AB93EC}" ShortID="684288749">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BubbleWait" ID="{B6B79CED-3380-48F5-A982-99BB006EBA9C}" WorkUnitID="{8440870C-902B-4939-9FD8-6EA8F93DC50D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -30,6 +30,11 @@ public class Bubble : MonoBehaviour
         return !is_dead_;
     }
 
+    public AK.Wwise.Event BubbleThrowEvent;
+    public AK.Wwise.Event BubbleCrushEvent;
+    public AK.Wwise.Event BubblePickupEvent;
+    public AK.Wwise.Event BubblePopEvent;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,7 +48,7 @@ public class Bubble : MonoBehaviour
     {
         UpdateVelocity();
 
-        // ˆÊ’uXV
+        // ï¿½Ê’uï¿½Xï¿½V
         switch (state_)
         {
             case State.Free:
@@ -63,7 +68,7 @@ public class Bubble : MonoBehaviour
 
     void UpdateVelocity()
     {
-        // ‘¬“x•ÏX
+        // ï¿½ï¿½ï¿½xï¿½ÏX
         const float rate = 1.0f - kFrictionVel;
         velocity_ *= rate;
     }
@@ -94,7 +99,8 @@ public class Bubble : MonoBehaviour
         var p = this.transform.position;
         p = player_.transform.position + new Vector3(0, 0, hold_offset);
         this.transform.position = p;
-        SoundController.Instance.PlaySE(SE.BubblePickup);
+        //SoundController.Instance.PlaySE(SE.BubblePickup);
+        BubblePickupEvent.Post(gameObject);
     }
 
     public void Throw(Vector3 position, Vector3 direction)
@@ -102,7 +108,8 @@ public class Bubble : MonoBehaviour
         state_ = State.Free;
         this.transform.position = position;
         velocity_ = direction * GetVelocityFromRank();
-        SoundController.Instance.PlaySE(SE.BubbleThrow);
+        //SoundController.Instance.PlaySE(SE.BubbleThrow);
+        BubbleThrowEvent.Post(gameObject);
     }
 
     public void Put()
@@ -133,7 +140,7 @@ public class Bubble : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider collider)
-    { // ÚG‚µ‚½’¼Œã
+    { // ï¿½ÚGï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (is_dead_) return;
 
         if (collider.gameObject.CompareTag("Bubble"))
@@ -155,20 +162,23 @@ public class Bubble : MonoBehaviour
             is_dead_ = true;
             Destroy(collider.gameObject);
             Destroy(this.gameObject);
-            SoundController.Instance.PlaySE(SE.BubbleCrush);
+            //SoundController.Instance.PlaySE(SE.BubbleCrush);
+            BubbleCrushEvent.Post(gameObject);
 
         }
         if (collider.gameObject.CompareTag("Chara"))
         {
-            // TODO: ‚Ğ‚é‚İ
+            // TODO: ï¿½Ğ‚ï¿½ï¿½
+            BubbleCrushEvent.Post(gameObject);
         }
         if (collider.gameObject.CompareTag("Ship"))
         {
-            // TODO: “¾“_ˆ—
+            // TODO: ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½
             var ship = collider.gameObject.GetComponent<Ship>();
             ship.AddScore(GetScoreByRank());
             Destroy(this.gameObject);
-            SoundController.Instance.PlaySE(SE.BubbleCrush);
+            //SoundController.Instance.PlaySE(SE.BubbleCrush);
+            BubblePopEvent.Post(gameObject);
         }
 
     }
