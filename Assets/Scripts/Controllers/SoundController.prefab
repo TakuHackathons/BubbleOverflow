@@ -47,12 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a2e0de6b75e0b45a6741a86a1baba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 1
   bgmAudioSource: {fileID: 7274587142826274901}
   seAudioSource: {fileID: 7144542515528717368}
   voiceAudioSource: {fileID: 1994087103201572490}
   bgmList:
   - key: 0
-    value: {fileID: 8300000, guid: 7e76c35b7363e244aa24cad0a011d930, type: 3}
+    value: {fileID: 8300000, guid: 61c30e154f49a354284ccf4b28bd42dd, type: 3}
   - key: 1
     value: {fileID: 8300000, guid: 1c66af417dc764040bc77b8fe97141cc, type: 3}
   seList:

@@ -11,6 +11,7 @@ public class TitleUIController : MonoBehaviour
     {
         titleUiField.gameObject.SetActive(true);
         creditUiField.gameObject.SetActive(false);
+        SoundController.Instance.PlayBGM(BGM.Intro);
     }
 
     public void OnClickStartButton()

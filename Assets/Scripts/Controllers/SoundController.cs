@@ -26,7 +26,7 @@ public enum Voice
     Lose,
 }
 
-public class SoundController : MonoBehaviour
+public class SoundController : SingletonBehaviour<SoundController>
 {
     [System.Serializable]
     public struct BgmInfo
@@ -49,10 +49,6 @@ public class SoundController : MonoBehaviour
         public AudioClip value;
     }
 
-    private static SoundController instance;
-
-    public static SoundController Instance { get { return instance;  } }
-
     [SerializeField] public AudioSource bgmAudioSource;
     [SerializeField] public AudioSource seAudioSource;
     [SerializeField] public AudioSource voiceAudioSource;
@@ -65,11 +61,6 @@ public class SoundController : MonoBehaviour
     [SerializeField] public VoiceInfo[] horseVoiceList;
 
     private Dictionary<string, AudioClip> clipCache = new Dictionary<string, AudioClip>();
-
-    private void Awake()
-    {
-        instance = this;
-    }
 
     public void PlayBGM(BGM bgm) {
         foreach (var info in bgmList) {
