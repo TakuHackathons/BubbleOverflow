@@ -5,6 +5,7 @@ public class TitleUIController : MonoBehaviour
 {
     [SerializeField] private GameObject titleUiField;
     [SerializeField] private GameObject creditUiField;
+    [SerializeField] private string gameSceneName;
 
     void Start()
     {
@@ -14,6 +15,7 @@ public class TitleUIController : MonoBehaviour
 
     public void OnClickStartButton()
     {
+        SceneManager.LoadScene(gameSceneName);
     }
 
     public void OnClickCreditButton()

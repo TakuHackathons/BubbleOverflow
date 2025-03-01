@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleUiField: {fileID: 6849423399421099461}
   creditUiField: {fileID: 7214212022944447510}
+  gameSceneName: Main
 --- !u!1 &998057231790845289
 GameObject:
   m_ObjectHideFlags: 0
