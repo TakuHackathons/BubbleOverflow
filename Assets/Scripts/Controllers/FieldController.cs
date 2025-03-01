@@ -7,6 +7,44 @@ public class FieldController : SingletonBehaviour<FieldController>
     [SerializeField] private List<PlayerTerritory> playerTerritories;
     [SerializeField] private List<PlayerRootNumberName> playerRootNumberNames;
 
+    [SerializeField] private Ship ship_dog;
+    [SerializeField] private Ship ship_cat;
+    [SerializeField] private Ship ship_bunny;
+    [SerializeField] private Ship ship_horse;
+
+    public int DogScore
+    {
+        get
+        {
+            return ship_dog.GetScore();
+        }
+    }
+
+    public int CatScore
+    {
+        get
+        {
+            return ship_cat.GetScore();
+        }
+
+    }
+
+    public int BunnyScore
+    {
+        get
+        {
+            return ship_bunny.GetScore();
+        }
+    }
+
+    public int HorseScore
+    {
+        get
+        {
+            return ship_horse.GetScore();
+        }
+    }
+
     private void Awake()
     {
         // 

@@ -799,10 +799,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be8af5db9ac706488422191101c34f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship_dog: {fileID: 0}
-  ship_cat: {fileID: 0}
-  ship_bunny: {fileID: 0}
-  ship_horse: {fileID: 0}
   text_dog: {fileID: 7120849324377952524}
   text_cat: {fileID: 8781730127463392600}
   text_bunny: {fileID: 5674830823993879133}

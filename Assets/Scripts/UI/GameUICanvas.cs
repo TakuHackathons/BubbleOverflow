@@ -6,11 +6,6 @@ public class GameUICanvas : MonoBehaviour
     //[SerializeField] private TextMeshProUGUI timeCounterText;
     //[SerializeField] private TextMeshProUGUI scoreText;
 
-    [SerializeField] private GameObject ship_dog;
-    [SerializeField] private GameObject ship_cat;
-    [SerializeField] private GameObject ship_bunny;
-    [SerializeField] private GameObject ship_horse;
-
     [SerializeField] private TextMeshProUGUI text_dog;
     [SerializeField] private TextMeshProUGUI text_cat;
     [SerializeField] private TextMeshProUGUI text_bunny;
@@ -25,10 +20,11 @@ public class GameUICanvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text_dog.text = $"{ship_dog.GetComponent<Ship>().GetScore()}";
-        text_cat.text = $"{ship_cat.GetComponent<Ship>().GetScore()}";
-        text_bunny.text = $"{ship_bunny.GetComponent<Ship>().GetScore()}";
-        text_horse.text = $"{ship_horse.GetComponent<Ship>().GetScore()}";
+        FieldController fieldControlerInstance = FieldController.Instance;
+        text_dog.text = $"{fieldControlerInstance.DogScore}";
+        text_cat.text = $"{fieldControlerInstance.CatScore}";
+        text_bunny.text = $"{fieldControlerInstance.BunnyScore}";
+        text_horse.text = $"{fieldControlerInstance.HorseScore}";
 
         //currentTimeSecond += Time.deltaTime;
         //timeCounterText.text = $"{Mathf.Floor(currentTimeSecond).ToString()} seconds";
